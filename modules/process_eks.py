@@ -91,7 +91,6 @@ def process_eks(ts, input_kwargs, label, aws_account_data, src_data, backend_dat
     input_kwargs["ssh_cidr_block"] = [data_vpc.vpc_cidr] + input_kwargs["ssh_cidr_block"]
 
     # transit is not setup correctly for azc - so workers in "eu-west-1c" cannot connect to EKS cluster
-    # see here: https://github.com/River-Island/shared-terraform/blob/master/modules/transit/vpc.tf#L22
     private_subnets = get_subnets(filtered_vpc_id, region, 'private', 'eu-west-1c')
 
   input_kwargs["private_subnets"] = private_subnets

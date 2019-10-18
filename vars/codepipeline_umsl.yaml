@@ -96,7 +96,7 @@ dataops_staging:
       sm_webhooks_token_secret_name: "dataops_webhooks_token"
       webhook_authentication: "GITHUB_HMAC"
       privileged_mode: "true"
-      github_repo_owner: "River-Island"
+      github_repo_owner: "dieple"
       aws_account_id: ""
       aws_region: ""
       tags: {}
