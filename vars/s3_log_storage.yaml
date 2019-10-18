@@ -1,0 +1,112 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "airflow-logs"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      acl: "log-delivery-write"
+      expiration_days: 90
+      force_destroy: "false"
+      glacier_transition_days: 60
+      kms_master_key_id: ""
+      lifecycle_prefix: ""
+      lifecycle_rule_enabled: "true"
+      lifecycle_tags: {}
+      name: "airflow-logs"
+      noncurrent_version_expiration_days: 90
+      noncurrent_version_transition_days: 30
+      policy: ""
+      region: "eu-west-1"
+      sse_algorithm: "AES256"
+      standard_transition_days: 30
+      tags: {}
+      versioning_enabled: "true"
+    outputs:
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "enabled"
+      - "prefix"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "airflow-logs"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: "true"
+      acl: "log-delivery-write"
+      expiration_days: 90
+      force_destroy: "false"
+      glacier_transition_days: 60
+      kms_master_key_id: ""
+      lifecycle_prefix: ""
+      lifecycle_rule_enabled: "true"
+      lifecycle_tags: {}
+      noncurrent_version_expiration_days: 90
+      noncurrent_version_transition_days: 30
+      policy: ""
+      region: "eu-west-1"
+      sse_algorithm: "AES256"
+      standard_transition_days: 30
+      tags: {}
+      versioning_enabled: "true"
+    outputs:
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "enabled"
+      - "prefix"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "airflow-logs"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: "true"
+      acl: "log-delivery-write"
+      expiration_days: 90
+      force_destroy: "false"
+      glacier_transition_days: 60
+      kms_master_key_id: ""
+      lifecycle_prefix: ""
+      lifecycle_rule_enabled: "true"
+      lifecycle_tags: {}
+      noncurrent_version_expiration_days: 90
+      noncurrent_version_transition_days: 30
+      policy: ""
+      region: "eu-west-1"
+      sse_algorithm: "AES256"
+      standard_transition_days: 30
+      tags: {}
+      versioning_enabled: "true"
+    outputs:
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "enabled"
+      - "prefix"

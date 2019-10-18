@@ -1,0 +1,121 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "codepipeline-s3-bucket"
+      namespace: "og8"
+      stage: "staging"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      acl: "private"
+      allow_encrypted_uploads_only: "false"
+      allowed_bucket_actions:
+        - "s3:Getbject"
+        - "s3:GetObjectVersion"
+        - "s3:GetBucketVersioning"
+        - "s3:PutObject"
+        - "s3:DeleteObject"
+      force_destroy: "false"
+      policy: ""
+      region: "eu-west-1"
+      sse_algorithm: "AES256"
+      name: ""
+      tags: {}
+      user_enabled: "false"
+      versioning_enabled: "true"
+    outputs:
+      - "access_key_id"
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "secret_access_key"
+      - "user_arn"
+      - "user_enabled"
+      - "user_name"
+      - "user_unique_id"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "codepipeline-s3-bucket"
+      namespace: "og8"
+      stage: "dev"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      acl: "private"
+      allow_encrypted_uploads_only: "false"
+      allowed_bucket_actions:
+        - "s3:Getbject"
+        - "s3:GetObjectVersion"
+        - "s3:GetBucketVersioning"
+        - "s3:PutObject"
+        - "s3:DeleteObject"
+      force_destroy: "false"
+      policy: ""
+      region: "eu-west-1"
+      sse_algorithm: "AES256"
+      name: ""
+      tags: {}
+      user_enabled: "false"
+      versioning_enabled: "true"
+    outputs:
+      - "access_key_id"
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "secret_access_key"
+      - "user_arn"
+      - "user_enabled"
+      - "user_name"
+      - "user_unique_id"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "codepipeline-s3-bucket"
+      namespace: "og8"
+      stage: "prod"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      acl: "private"
+      allow_encrypted_uploads_only: "false"
+      allowed_bucket_actions:
+        - "s3:Getbject"
+        - "s3:GetObjectVersion"
+        - "s3:GetBucketVersioning"
+        - "s3:PutObject"
+        - "s3:DeleteObject"
+      force_destroy: "false"
+      policy: ""
+      region: "eu-west-1"
+      sse_algorithm: "AES256"
+      name: ""
+      tags: {}
+      user_enabled: "false"
+      versioning_enabled: "true"
+    outputs:
+      - "access_key_id"
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "secret_access_key"
+      - "user_arn"
+      - "user_enabled"
+      - "user_name"
+      - "user_unique_id"
+

@@ -1,0 +1,120 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "kms"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      kms_name: "eks"
+      alias: "alias/eks"
+      deletion_window_in_days: 10
+      description: "EFS KMS master key for EKS cluster"
+      enable_key_rotation: "true"
+    outputs:
+      - "alias_arn"
+      - "alias_name"
+      - "key_arn"
+      - "key_id"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "kms"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      kms_name: "eks"
+      alias: "alias/eks"
+      deletion_window_in_days: 10
+      description: "EFS KMS master key for EKS cluster"
+      enable_key_rotation: "true"
+    outputs:
+      - "alias_arn"
+      - "alias_name"
+      - "key_arn"
+      - "key_id"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "kms"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      kms_name: "eks"
+      alias: "alias/eks"
+      deletion_window_in_days: 10
+      description: "EFS KMS master key for EKS cluster"
+      enable_key_rotation: "true"
+    outputs:
+      - "alias_arn"
+      - "alias_name"
+      - "key_arn"
+      - "key_id"
+cloudops_prod:
+  account_name: "cloudops_prod"
+  module:
+    tag_label:
+      project: "automic"
+      cost_centre: ""
+      namespace: "automic"
+      name: "kms"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      kms_name: "eks"
+      alias: "alias/automic"
+      deletion_window_in_days: 10
+      description: "Automic project kms key"
+      enable_key_rotation: "true"
+    outputs:
+      - "alias_arn"
+      - "alias_name"
+      - "key_arn"
+      - "key_id"
+cloudops_dev:
+  account_name: "cloudops_dev"
+  module:
+    tag_label:
+      project: "cloudops"
+      cost_centre: ""
+      namespace: "cloudops"
+      name: "kms"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      kms_name: "eks"
+      alias: "alias/cloudops"
+      deletion_window_in_days: 10
+      description: "Cloudops project kms key"
+      enable_key_rotation: "true"
+    outputs:
+      - "alias_arn"
+      - "alias_name"
+      - "key_arn"
+      - "key_id"

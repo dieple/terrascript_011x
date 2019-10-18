@@ -1,0 +1,79 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "cloudtrail"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      add_sns_policy: ""
+      additional_endpoint_arns: ""
+      create_dashboard: ""
+      log_group_name: ""
+      metric_namespace: ""
+      region: ""
+      sns_topic_arn: ""
+    outputs:
+      - "dashboard_combined"
+      - "dashboard_individual"
+      - "sns_topic_arn"
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "cloudtrail"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      add_sns_policy: ""
+      additional_endpoint_arns: ""
+      create_dashboard: ""
+      log_group_name: ""
+      metric_namespace: ""
+      region: ""
+      sns_topic_arn: ""
+    outputs:
+      - "dashboard_combined"
+      - "dashboard_individual"
+      - "sns_topic_arn"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "cloudtrail"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      add_sns_policy: ""
+      additional_endpoint_arns: ""
+      create_dashboard: ""
+      log_group_name: ""
+      metric_namespace: ""
+      region: ""
+      sns_topic_arn: ""
+    outputs:
+      - "dashboard_combined"
+      - "dashboard_individual"
+      - "sns_topic_arn"
+

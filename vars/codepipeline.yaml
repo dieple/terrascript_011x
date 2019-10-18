@@ -1,0 +1,115 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "misc-bi-airflow-pipeline"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      github_repo_names: "misc-bi-airflow"
+      ecr_image_repo_names: "misc-bi-airflow"
+      github_repo_branch: "master"
+      badge_enabled: "false"
+      build_compute_type: "BUILD_GENERAL1_SMALL"
+      build_image: "aws/codebuild/standard:2.0"
+      build_timeout: "60"
+      buildspec: ""
+      codebuild_service_policy_arn: ""
+      codebuild_service_role_arn: ""
+      codepipeline_role_arn: ""
+      ecr_image_tag: ""
+      ecr_repo_uri: ""
+      ecs_cluster_name: ""
+      ecs_service_name: ""
+      eks_cluster_name: ""
+      eks_kubectl_role_arn: ""
+      environment_variables: [{}]
+      github_webhook_events: []
+      name: ""
+      stage: "staging"
+      poll_source_changes: "false"
+      s3_bucket_force_destroy: "false"
+      webhook_enabled: "true"
+      webhook_filter_json_path: "$.ref"
+      webhook_filter_match_equals: "refs/heads/{Branch}"
+      webhook_target_action: "Source"
+      source_type: "GITHUB"
+      source_location: "https://github.com"
+      github_oauth_token: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQFa/82+9KuQrzqCFnKGMPYKAAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDBB9PFNwh850K4TwnAIBEIBD+swSoEQ4IS3RscNSUsTEZ+Wy1IpBftv71ySU0YnGp1tClLsXydXCc91pkJJP6fvYPVU8uNardspelhfjX6DU833BFQ=="
+      github_webhooks_token: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQFa/82+9KuQrzqCFnKGMPYKAAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDBB9PFNwh850K4TwnAIBEIBD+swSoEQ4IS3RscNSUsTEZ+Wy1IpBftv71ySU0YnGp1tClLsXydXCc91pkJJP6fvYPVU8uNardspelhfjX6DU833BFQ=="
+      sm_oauth_token_secret_name: "dataops_oauth_token"
+      sm_webhooks_token_secret_name: "dataops_webhooks_token"
+      webhook_authentication: "GITHUB_HMAC"
+      privileged_mode: "true"
+      github_repo_owner: "River-Island"
+      aws_account_id: ""
+      aws_region: ""
+      artifact_store_bucket_name: ""
+      kms_key_arn: "arn:aws:kms:eu-west-1:561276803310:key/aa95c97b-074d-4c38-82bc-48c2abcbef7a"
+      tags: {}
+    outputs:
+      - "badge_url"
+#      - "webhook_id
+#      - "webhook_url"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "codepipeline"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      github_repo_names: "misc-bi-airflow"
+      ecr_image_repo_names: "misc-bi-airflow"
+      github_repo_branch: "cicd-airflow-dev"
+      badge_enabled: "false"
+      build_compute_type: "BUILD_GENERAL1_SMALL"
+      build_image: "aws/codebuild/standard:2.0"
+      build_timeout: "60"
+      buildspec: ""
+      ecr_image_tag: ""
+      ecr_repo_uri: ""
+      ecs_cluster_name: ""
+      ecs_service_name: ""
+      eks_cluster_name: ""
+      eks_kubectl_role_arn: ""
+      environment_variables: [{}]
+      github_webhook_events: []
+      poll_source_changes: "true"
+      s3_bucket_force_destroy: "false"
+      webhook_enabled: "true"
+      webhook_filter_json_path: "$.ref"
+      webhook_filter_match_equals: "refs/heads/{Branch}"
+      webhook_target_action: "Source"
+      source_type: "GITHUB"
+      source_location: "github.com"
+      github_oauth_token: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQFa/82+9KuQrzqCFnKGMPYKAAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDBB9PFNwh850K4TwnAIBEIBD+swSoEQ4IS3RscNSUsTEZ+Wy1IpBftv71ySU0YnGp1tClLsXydXCc91pkJJP6fvYPVU8uNardspelhfjX6DU833BFQ=="
+      github_webhooks_token: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQFa/82+9KuQrzqCFnKGMPYKAAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDBB9PFNwh850K4TwnAIBEIBD+swSoEQ4IS3RscNSUsTEZ+Wy1IpBftv71ySU0YnGp1tClLsXydXCc91pkJJP6fvYPVU8uNardspelhfjX6DU833BFQ=="
+      sm_oauth_token_secret_name: "dataops_oauth_token"
+      sm_webhooks_token_secret_name: "dataops_webhooks_token"
+      webhook_authentication: "GITHUB_HMAC"
+      privileged_mode: "true"
+      github_repo_owner: "River-Island"
+      aws_account_id: ""
+      aws_region: ""
+      artifact_store_bucket_name: ""
+      kms_key_arn: "arn:aws:kms:eu-west-1:561276803310:key/aa95c97b-074d-4c38-82bc-48c2abcbef7a"
+      tags: {}
+    outputs:
+      - "badge_url"
+#      - "webhook_id"
+#      - "webhook_url"
+

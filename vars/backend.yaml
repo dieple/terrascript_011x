@@ -1,0 +1,20 @@
+dataops_dev:
+  vpc_built_by_terrascript: true
+  terraform:
+    required_version: ">= 0.11.7"
+    backend:
+      type: "s3"
+      encrypt: 1
+      bucket: "og8-dev-tf-state"
+    remote_data:
+      bucket: "og8-dev-tf-state"
+dataops_staging:
+  vpc_built_by_terrascript: false
+  terraform:
+    required_version: ">= 0.11.7"
+    backend:
+      type: "s3"
+      encrypt: 1
+      bucket: "ek-group-dev-tf-state-umsl"
+    remote_data:
+      bucket: "ek-group-dev-tf-state-umsl"

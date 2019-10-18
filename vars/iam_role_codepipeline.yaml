@@ -1,0 +1,159 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-role-codepipeline"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: "iam-role-codepipeline"
+      actions_allow:
+        -
+          - "codebuild:StartBuild"
+          - "codebuild:BatchGetBuilds"
+          - "codedeploy:CreateDeployment"
+          - "codedeploy:GetApplicationRevision"
+          - "codedeploy:GetDeployment"
+          - "codedeploy:GetDeploymentConfig"
+          - "codedeploy:RegisterApplicationRevision"
+          - "iam:PassRole"
+          - "iam:GetRole"
+          - "codecommit:GitPull"
+        -
+          - "s3:CreateBucket"
+          - "s3:GetObject"
+          - "s3:List*"
+          - "s3:PutObject"
+          - "s3:GetBucketAcl"
+          - "s3:GetBucketLocation"
+          - "s3:GetObjectVersion"
+      resources_allow:
+        -
+          - "*"
+        -
+          - "arn:aws:s3:::og8-staging-codepipeline-s3-bucket-dataops"
+      actions_deny: []
+      principals:
+        Service: ["codepipeline.amazonaws.com"]
+      role_description: "codepipeline iam role"
+      policy_description: "Policy for the code pipeline iam role"
+      policy_documents: []
+      create_ec2_profile: false
+      max_session_duration: 3600
+    outputs:
+      - "name"
+      - "arn"
+      - "id"
+      - "policy"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-role-codepipeline"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: "iam-role-codepipeline"
+      actions_allow:
+        -
+          - "codebuild:StartBuild"
+          - "codebuild:BatchGetBuilds"
+          - "codedeploy:CreateDeployment"
+          - "codedeploy:GetApplicationRevision"
+          - "codedeploy:GetDeployment"
+          - "codedeploy:GetDeploymentConfig"
+          - "codedeploy:RegisterApplicationRevision"
+          - "iam:PassRole"
+          - "iam:GetRole"
+          - "codecommit:GitPull"
+        -
+          - "s3:CreateBucket"
+          - "s3:GetObject"
+          - "s3:List*"
+          - "s3:PutObject"
+          - "s3:GetBucketAcl"
+          - "s3:GetBucketLocation"
+          - "s3:GetObjectVersion"
+      resources_allow:
+        -
+          - "*"
+        -
+          - "arn:aws:s3:::og8-dev-codepipeline-s3-bucket-dataops"
+      actions_deny: []
+      principals:
+        Service: ["codepipeline.amazonaws.com"]
+      role_description: "codepipeline iam role"
+      policy_description: "Policy for the code pipeline iam role"
+      policy_documents: []
+      create_ec2_profile: false
+      max_session_duration: 3600
+    outputs:
+      - "name"
+      - "arn"
+      - "id"
+      - "policy"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-role-codepipeline"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: "iam-role-codepipeline"
+      actions_allow:
+        -
+          - "codebuild:StartBuild"
+          - "codebuild:BatchGetBuilds"
+          - "codedeploy:CreateDeployment"
+          - "codedeploy:GetApplicationRevision"
+          - "codedeploy:GetDeployment"
+          - "codedeploy:GetDeploymentConfig"
+          - "codedeploy:RegisterApplicationRevision"
+          - "iam:PassRole"
+          - "iam:GetRole"
+          - "codecommit:GitPull"
+        -
+          - "s3:CreateBucket"
+          - "s3:GetObject"
+          - "s3:List*"
+          - "s3:PutObject"
+          - "s3:GetBucketAcl"
+          - "s3:GetBucketLocation"
+          - "s3:GetObjectVersion"
+      resources_allow:
+        -
+          - "*"
+        -
+          - "arn:aws:s3:::og8-prod-codepipeline-s3-bucket-dataops"
+      actions_deny: []
+      principals:
+        Service: ["codepipeline.amazonaws.com"]
+      role_description: "codepipeline iam role"
+      policy_description: "Policy for the code pipeline iam role"
+      policy_documents: []
+      create_ec2_profile: false
+      max_session_duration: 3600
+    outputs:
+      - "name"
+      - "arn"
+      - "id"
+      - "policy"

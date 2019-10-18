@@ -1,0 +1,69 @@
+cloudops_dev:
+  account_name: "cloudops_dev"
+  module:
+    tag_label:
+      project: "cloudops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "jenkins"
+      name: "ec2"
+      stage: "dev"
+      tags: {}
+    inputs:
+      ami: "ami-0ce71448843cb18a1"
+      associate_public_ip_address: false
+      cpu_credits: "standard"
+      disable_api_termination: "false"
+      ebs_block_device:
+        - delete_on_termination: false
+          device_name: "/dev/xvdj"
+          encrypted: false
+          iops: 0
+          kms_key_id: ""
+          snapshot_id: ""
+          volume_size: 100
+          volume_type: "gp2"
+      ebs_optimized: false
+      ephemeral_block_device: []
+      iam_instance_profile: ""
+      instance_count: 1
+      instance_initiated_shutdown_behavior: ""
+      instance_type: "t2.medium"
+      ipv6_address_count: 0
+      ipv6_addresses: []
+      jenkins_mount_dir: "/jenkins_home"
+      key_name: "cloudops-dev-default"
+      monitoring: false
+      name: ""
+      network_interface: []
+      placement_group: ""
+      private_ip: ""
+      root_block_device: []
+      source_dest_check: true
+      subnet_ids: ["subnet-08086aeb16daf04cc"]
+      tags: {}
+      tenancy: "default"
+      use_num_suffix: false
+      user_data: []
+      volume_tags: {}
+      vpc_security_group_ids: []
+      ssh_user: "ec2-user"
+      public_key_data: ""
+    outputs:
+      - "availability_zone"
+      - "credit_specification"
+      - "id"
+      - "key_name"
+      - "placement_group"
+      - "primary_network_interface_id"
+      - "private_dns"
+      - "private_ip"
+      - "public_dns"
+      - "public_ip"
+      - "security_groups"
+      - "subnet_id"
+      - "tags"
+      - "volume_tags"
+
+

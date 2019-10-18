@@ -1,0 +1,75 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "lb-access-logs"
+      namespace: "og8"
+      stage: "staging"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      include_tag_label_: true
+      acl: "log-delivery-write"
+      force_destroy: "false"
+      prefix: ""
+      region: "eu-west-1"
+      tags: {}
+    outputs:
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "bucket_prefix"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "lb-access-logs"
+      namespace: "og8"
+      stage: "dev"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      include_tag_label_: true
+      acl: "log-delivery-write"
+      force_destroy: "false"
+      prefix: ""
+      region: "eu-west-1"
+      tags: {}
+    outputs:
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "bucket_prefix"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "lb-access-logs"
+      namespace: "og8"
+      stage: "prod"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      include_tag_label_: true
+      acl: "log-delivery-write"
+      force_destroy: "false"
+      prefix: ""
+      region: "eu-west-1"
+      tags: {}
+    outputs:
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "bucket_prefix"

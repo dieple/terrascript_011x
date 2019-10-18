@@ -1,0 +1,292 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "eks"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      autoscaling_enabled: "true"
+      cluster_create_security_group: "false"
+      cluster_create_timeout: "15m"
+      cluster_delete_timeout: "15m"
+      cluster_enabled_log_types: []
+      cluster_endpoint_private_access: "false"
+      cluster_endpoint_public_access: "true"
+      cluster_iam_role_name: ""
+      cluster_name: "og8-staging-eks-dataops"
+      cluster_security_group_id: ""
+      cluster_version: "1.12"
+      config_output_path: "/repos/ts-generate/eks/dataops_staging/"
+      iam_path: "/"
+      iam_instance_profile_name: ""
+      create_elb_service_linked_role: "true"
+      enabled_cluster_log_types: ["api", "audit"]
+      efs_mount_dir: "/mnt/efs"
+      efs_dns: ""
+      key_name: ""
+      kubeconfig_aws_authenticator_additional_args: []
+      kubeconfig_aws_authenticator_command: "aws-iam-authenticator"
+      kubeconfig_aws_authenticator_env_variables: {}
+      kubeconfig_name: ""
+      local_exec_interpreter: [ "/bin/sh", "-c" ]
+      manage_aws_auth: "true"
+      manage_cluster_iam_resources: "false"
+      manage_worker_iam_resources: "false"
+      map_accounts: []
+      map_accounts_count: "0"
+      map_roles: []
+      map_users_count: "0"
+      permissions_boundary: ""
+      subnets: []
+      ssh_cidr_block: ["80.168.47.127/32", "193.105.212.250/32"]
+      tags: {}
+      vpc_id: ""
+      worker_additional_security_group_ids: []
+      worker_ami_name_filter: "v*"
+      worker_create_security_group: "false"
+      worker_group_count: "1"
+      worker_group_launch_template_count: "0"
+      worker_group_launch_template_mixed_count: "0"
+      worker_group_tags: { "default": [] }
+#      worker_groups:
+#      - name: "worker-group-1"
+#        asg_desired_capacity: "1"
+#      - name: "worker-group-2"
+#        asg_desired_capacity: "1"
+      worker_groups_launch_template: []
+      worker_groups_launch_template_mixed: []
+      worker_security_group_id: ""
+      worker_sg_ingress_from_port: "1025"
+      workers_additional_policies: []
+      workers_additional_policies_count: "0"
+      workers_group_defaults: { "asg_desired_capacity": "3", "asg_min_size": "3", "asg_max_size": "5" }
+      write_aws_auth_config: "true"
+      write_kubeconfig: "true"
+      vpc_tag_filter: "staging-dataops*"
+    outputs:
+      - "cluster_arn"
+      - "cluster_certificate_authority_data"
+      - "cluster_endpoint"
+      - "cluster_iam_role_arn"
+      - "cluster_iam_role_name"
+      - "cluster_id"
+      - "cluster_security_group_id"
+      - "cluster_version"
+      - "config_map_aws_auth"
+      - "config_map_aws_auth_filename"
+      - "kubeconfig"
+      - "kubeconfig_filename"
+      - "worker_iam_instance_profile_arns"
+      - "worker_iam_instance_profile_names"
+      - "worker_iam_role_arn"
+      - "worker_iam_role_name"
+      - "worker_security_group_id"
+      - "workers_asg_arns"
+      - "workers_asg_names"
+      - "workers_default_ami_id"
+      - "workers_launch_template_arns"
+      - "workers_launch_template_ids"
+      - "workers_launch_template_latest_versions"
+      - "workers_user_data"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "eks"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      autoscaling_enabled: "true"
+      cluster_create_security_group: "false"
+      cluster_create_timeout: "15m"
+      cluster_delete_timeout: "15m"
+      cluster_enabled_log_types: []
+      cluster_endpoint_private_access: "false"
+      cluster_endpoint_public_access: "true"
+      cluster_iam_role_name: ""
+      cluster_name: "og8-dev-eks-dataops"
+      cluster_security_group_id: ""
+      cluster_version: "1.12"
+      config_output_path: "/repos/ts-generate/eks/dataops_dev/"
+      iam_path: "/"
+      iam_instance_profile_name: ""
+      create_elb_service_linked_role: "true"
+      enabled_cluster_log_types: ["api", "audit"]
+      efs_mount_dir: "/mnt/efs"
+      efs_dns: ""
+      key_name: ""
+      kubeconfig_aws_authenticator_additional_args: []
+      kubeconfig_aws_authenticator_command: "aws-iam-authenticator"
+      kubeconfig_aws_authenticator_env_variables: {}
+      kubeconfig_name: ""
+      local_exec_interpreter: [ "/bin/sh", "-c" ]
+      manage_aws_auth: "true"
+      manage_cluster_iam_resources: "false"
+      manage_worker_iam_resources: "false"
+      map_accounts: []
+      map_accounts_count: "0"
+      map_roles: []
+      map_users_count: "0"
+      permissions_boundary: ""
+      subnets: []
+      ssh_cidr_block: ["80.168.47.127/32", "193.105.212.250/32"]
+      tags: {}
+      vpc_id: ""
+      worker_additional_security_group_ids: []
+      worker_ami_name_filter: "v*"
+      worker_create_security_group: "false"
+      worker_group_count: "1"
+      worker_group_launch_template_count: "0"
+      worker_group_launch_template_mixed_count: "0"
+      worker_group_tags: { "default": [] }
+      #      worker_groups:
+      #      - name: "worker-group-1"
+      #        asg_desired_capacity: "1"
+      #      - name: "worker-group-2"
+      #        asg_desired_capacity: "1"
+      worker_groups_launch_template: []
+      worker_groups_launch_template_mixed: []
+      worker_security_group_id: ""
+      worker_sg_ingress_from_port: "1025"
+      workers_additional_policies: []
+      workers_additional_policies_count: "0"
+      workers_group_defaults: { "asg_desired_capacity": "3", "asg_min_size": "3", "asg_max_size": "3" }
+      write_aws_auth_config: "true"
+      write_kubeconfig: "true"
+      vpc_tag_filter: "dev-dataops*"
+    outputs:
+      - "cluster_arn"
+      - "cluster_certificate_authority_data"
+      - "cluster_endpoint"
+      - "cluster_iam_role_arn"
+      - "cluster_iam_role_name"
+      - "cluster_id"
+      - "cluster_security_group_id"
+      - "cluster_version"
+      - "config_map_aws_auth"
+      - "config_map_aws_auth_filename"
+      - "kubeconfig"
+      - "kubeconfig_filename"
+      - "worker_iam_instance_profile_arns"
+      - "worker_iam_instance_profile_names"
+      - "worker_iam_role_arn"
+      - "worker_iam_role_name"
+      - "worker_security_group_id"
+      - "workers_asg_arns"
+      - "workers_asg_names"
+      - "workers_default_ami_id"
+      - "workers_launch_template_arns"
+      - "workers_launch_template_ids"
+      - "workers_launch_template_latest_versions"
+      - "workers_user_data"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "eks"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      autoscaling_enabled: "true"
+      cluster_create_security_group: "false"
+      cluster_create_timeout: "15m"
+      cluster_delete_timeout: "15m"
+      cluster_enabled_log_types: []
+      cluster_endpoint_private_access: "false"
+      cluster_endpoint_public_access: "true"
+      cluster_iam_role_name: ""
+      cluster_name: "og8-prod-eks-dataops"
+      cluster_security_group_id: ""
+      cluster_version: "1.12"
+      config_output_path: "/repos/ts-generate/eks/dataops_prod/"
+      iam_path: "/"
+      iam_instance_profile_name: ""
+      create_elb_service_linked_role: "true"
+      enabled_cluster_log_types: ["api", "audit"]
+      efs_mount_dir: "/mnt/efs"
+      efs_dns: ""
+      key_name: ""
+      kubeconfig_aws_authenticator_additional_args: []
+      kubeconfig_aws_authenticator_command: "aws-iam-authenticator"
+      kubeconfig_aws_authenticator_env_variables: {}
+      kubeconfig_name: ""
+      local_exec_interpreter: [ "/bin/sh", "-c" ]
+      manage_aws_auth: "true"
+      manage_cluster_iam_resources: "false"
+      manage_worker_iam_resources: "false"
+      map_accounts: []
+      map_accounts_count: "0"
+      map_roles: []
+      map_users_count: "0"
+      permissions_boundary: ""
+      subnets: []
+      ssh_cidr_block: ["80.168.47.127/32", "193.105.212.250/32"]
+      tags: {}
+      vpc_id: ""
+      worker_additional_security_group_ids: []
+      worker_ami_name_filter: "v*"
+      worker_create_security_group: "false"
+      worker_group_count: "1"
+      worker_group_launch_template_count: "0"
+      worker_group_launch_template_mixed_count: "0"
+      worker_group_tags: { "default": [] }
+      #      worker_groups:
+      #      - name: "worker-group-1"
+      #        asg_desired_capacity: "1"
+      #      - name: "worker-group-2"
+      #        asg_desired_capacity: "1"
+      worker_groups_launch_template: []
+      worker_groups_launch_template_mixed: []
+      worker_security_group_id: ""
+      worker_sg_ingress_from_port: "1025"
+      workers_additional_policies: []
+      workers_additional_policies_count: "0"
+      workers_group_defaults: { "asg_desired_capacity": "3", "asg_min_size": "3", "asg_max_size": "3" }
+      write_aws_auth_config: "true"
+      write_kubeconfig: "true"
+      vpc_tag_filter: "prod-dataops*"
+    outputs:
+      - "cluster_arn"
+      - "cluster_certificate_authority_data"
+      - "cluster_endpoint"
+      - "cluster_iam_role_arn"
+      - "cluster_iam_role_name"
+      - "cluster_id"
+      - "cluster_security_group_id"
+      - "cluster_version"
+      - "config_map_aws_auth"
+      - "config_map_aws_auth_filename"
+      - "kubeconfig"
+      - "kubeconfig_filename"
+      - "worker_iam_instance_profile_arns"
+      - "worker_iam_instance_profile_names"
+      - "worker_iam_role_arn"
+      - "worker_iam_role_name"
+      - "worker_security_group_id"
+      - "workers_asg_arns"
+      - "workers_asg_names"
+      - "workers_default_ami_id"
+      - "workers_launch_template_arns"
+      - "workers_launch_template_ids"
+      - "workers_launch_template_latest_versions"
+      - "workers_user_data"
+

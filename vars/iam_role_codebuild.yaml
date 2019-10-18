@@ -1,0 +1,274 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-role-codebuild"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: "iam-role-codebuild"
+      actions_allow:
+      -
+        - "ec2:DescribeSecurityGroups"
+        - "ec2:DescribeSubnets"
+      -
+        - "codebuild:*"
+        - "iam:PassRole"
+        - "codecommit:GitPull"
+      -
+        - "logs:FilterLogEvents"
+        - "logs:GetLogEvents"
+        - "logs:CreateLogGroup"
+        - "logs:CreateLogStream"
+        - "logs:PutLogEvents"
+      -
+        - "s3:CreateBucket"
+        - "s3:GetObject"
+        - "s3:List*"
+        - "s3:PutObject"
+        - "s3:GetBucketAcl"
+        - "s3:GetBucketLocation"
+        - "s3:GetObjectVersion"
+        - "s3:GetBucketVersioning"
+      -
+        - "ecr:BatchCheckLayerAvailability"
+        - "ecr:GetDownloadUrlForLayer"
+        - "ecr:BatchGetImage"
+        - "ecr:BatchCheckLayerAvailability"
+        - "ecr:PutImage"
+        - "ecr:InitiateLayerUpload"
+        - "ecr:UploadLayerPart"
+        - "ecr:CompleteLayerUpload"
+        - "ecr:GetAuthorizationToken"
+      -
+        - "ecs:RegisterTaskDefinition"
+        - "ecs:DescribeTaskDefinition"
+        - "ecs:DescribeServices"
+        - "ecs:CreateService"
+        - "ecs:ListServices"
+        - "ecs:UpdateService"
+      resources_allow:
+      -
+        - "*"
+      -
+        - "*"
+      -
+        - "*"
+      -
+        - "*"
+      -
+        - "*"
+      -
+        - "*"
+      actions_deny: []
+      principals:
+        Service: ["codebuild.amazonaws.com", "codepipeline.amazonaws.com"]
+      role_description: "codebuild iam role"
+      policy_description: "Policy for the code build iam role"
+      policy_documents: []
+      create_ec2_profile: false
+      max_session_duration: 3600
+    outputs:
+      - "name"
+      - "arn"
+      - "id"
+      - "policy"
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-role-codebuild"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: "iam-role-codebuild"
+      actions_allow:
+        -
+          - "codebuild:*"
+          - "codedeploy:*"
+          - "iam:GetRole"
+          - "iam:PassRole"
+          - "codecommit:GitPull"
+          - "lambda:invokefunction"
+          - "lambda:listfunctions"
+          - "elasticbeanstalk:CreateApplicationVersion"
+          - "elasticbeanstalk:DescribeApplicationVersions"
+          - "elasticbeanstalk:DescribeEnvironments"
+          - "elasticbeanstalk:DescribeEvents"
+          - "elasticbeanstalk:UpdateEnvironment"
+          - "autoscaling:DescribeAutoScalingGroups"
+          - "autoscaling:DescribeLaunchConfigurations"
+          - "autoscaling:DescribeScalingActivities"
+          - "autoscaling:ResumeProcesses"
+          - "autoscaling:SuspendProcesses"
+          - "sns:ListSubscriptionsByTopic"
+          - "elasticloadbalancing:DescribeLoadBalancers"
+          - "rds:DescribeDBInstances"
+          - "rds:DescribeOrderableDBInstanceOptions"
+        -
+          - "logs:FilterLogEvents"
+          - "logs:GetLogEvents"
+          - "logs:CreateLogGroup"
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+        -
+          - "s3:CreateBucket"
+          - "s3:GetObject"
+          - "s3:List*"
+          - "s3:PutObject"
+          - "s3:GetBucketAcl"
+          - "s3:GetBucketLocation"
+          - "s3:GetObjectVersion"
+          - "s3:GetObjectVersioning"
+        -
+          - "ecr:BatchCheckLayerAvailability"
+          - "ecr:GetDownloadUrlForLayer"
+          - "ecr:BatchGetImage"
+          - "ecr:PutImage"
+          - "ecr:InitiateLayerUpload"
+          - "ecr:UploadLayerPart"
+          - "ecr:CompleteLayerUpload"
+          - "ecr:GetAuthorizationToken"
+          - "ecr:DescribeImages"
+          - "ecr:DescribeRepositories"
+          - "ecr:GetRepositoryPolicy"
+          - "ecr:ListImages"
+        -
+          - "ec2:DescribeSecurityGroups"
+          - "ec2:DescribeSubnets"
+          - "ec2:DescribeInstances"
+          - "ec2:DescribeImages"
+          - "ec2:DescribeAddresses"
+          - "ec2:DescribeSubnets"
+          - "ec2:DescribeVpcs"
+          - "ec2:DescribeKeyPairs"
+        -
+          - "ecs:RegisterTaskDefinition"
+          - "ecs:DescribeTaskDefinition"
+          - "ecs:DescribeServices"
+          - "ecs:CreateService"
+          - "ecs:ListServices"
+          - "ecs:UpdateService"
+        -
+          - "kms:DescribeKey"
+          - "kms:ListKeyPolicies"
+          - "kms:GetKeyPolicy"
+          - "kms:GetKeyRotationStatus"
+          - "kms:Encrypt"
+          - "kms:Decrypt"
+          - "kms:GenerateDataKey*"
+          - "kms:ReEncrypt*"
+        -
+          - "s3:PutObject"
+        -
+          - "s3:ListBucket"
+          - "s3:GetBucketPolicy"
+          - "s3:GetObjectAcl"
+          - "s3:PutObjectAcl"
+          - "s3:DeleteObject"
+      resources_allow:
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "arn:aws:s3:::codepipeline*"
+          - "arn:aws:s3:::elasticbeanstalk*"
+        -
+          - "arn:aws:s3:::elasticbeanstalk*"
+      actions_deny: []
+      principals:
+        Service: ["codebuild.amazonaws.com"]
+      role_description: "codebuild iam role"
+      policy_description: "Policy for the code build iam role"
+      policy_documents: []
+      create_ec2_profile: false
+      max_session_duration: 3600
+    outputs:
+      - "name"
+      - "arn"
+      - "id"
+      - "policy"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-role-codebuild"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: "iam-role-codebuild"
+      actions_allow:
+        -
+          - "codebuild:*"
+          - "iam:PassRole"
+          - "codecommit:GitPull"
+        -
+          - "logs:FilterLogEvents"
+          - "logs:GetLogEvents"
+          - "logs:CreateLogGroup"
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+        -
+          - "s3:CreateBucket"
+          - "s3:GetObject"
+          - "s3:List*"
+          - "s3:PutObject"
+          - "s3:GetBucketAcl"
+          - "s3:GetBucketLocation"
+          - "s3:GetObjectVersion"
+        -
+          - "ecr:BatchCheckLayerAvailability"
+          - "ecr:GetDownloadUrlForLayer"
+          - "ecr:BatchGetImage"
+      resources_allow:
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+      actions_deny: []
+      principals:
+        Service: ["codebuild.amazonaws.com", "codepipeline.amazonaws.com"]
+      role_description: "codebuild iam role"
+      policy_description: "Policy for the code build iam role"
+      policy_documents: []
+      create_ec2_profile: false
+      max_session_duration: 3600
+    outputs:
+      - "name"
+      - "arn"
+      - "id"
+      - "policy"
+

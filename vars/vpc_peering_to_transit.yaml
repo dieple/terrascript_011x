@@ -1,0 +1,22 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      cost_centre: ""
+      enabled: "true"
+      namespace: "og8"
+      name: "vpc-peering"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      project: "dataops"
+      tags: {}
+    inputs:
+      peer_vpc_account_id: "556748783639"
+      peer_vpc_id: "vpc-2ee35b4a"
+      peer_vpc_subnet_cidr: "10.201.0.0/16"
+      requestor_vpc_id: ""
+    outputs:
+      - "id"
+      - "accept_status"
+

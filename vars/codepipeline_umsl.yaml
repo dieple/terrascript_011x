@@ -1,0 +1,106 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "umsl"
+      cost_centre: "future-airlines"
+      namespace: "ek-group"
+      name: "codepipeline-umsl"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      github_repo_names: "umsl"
+      ecr_image_repo_names: "umsl"
+      github_repo_branch: "master"
+      badge_enabled: "false"
+      build_compute_type: "BUILD_GENERAL1_SMALL"
+      build_image: "aws/codebuild/standard:2.0"
+      build_timeout: "60"
+      buildspec: ""
+      ecr_image_tag: ""
+      ecr_repo_uri: ""
+#      ecs_cluster_name: ""
+#      ecs_service_name: ""
+#      eks_cluster_name: ""
+#      eks_kubectl_role_arn: ""
+      environment_variables: [{}]
+      github_webhook_events: []
+      poll_source_changes: "true"
+      s3_bucket_force_destroy: "false"
+      webhook_enabled: "true"
+      webhook_filter_json_path: "$.ref"
+      webhook_filter_match_equals: "refs/heads/{Branch}"
+      webhook_target_action: "Source"
+      source_type: "GITHUB"
+      source_location: ""
+      umsl_oauth_token: "AQICAHjQip0jXYdN/AEuxJS9kRokcWqXGMXXmbggyEcH8tWacgGBli502Eoq0BhCEgP4+JJWAAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDMCKZp20kC4uvGXv0wIBEIBDb8ijgzYcadsvub6PIGqRlEqDLDDa3QYrvkH9md7T8VjI32tKezpmk2px+ZkErdRKxBA93aeyJGei7N665GKA0SSENw=="
+      umsl_webhooks_token: "AQICAHjQip0jXYdN/AEuxJS9kRokcWqXGMXXmbggyEcH8tWacgGBli502Eoq0BhCEgP4+JJWAAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDMCKZp20kC4uvGXv0wIBEIBDb8ijgzYcadsvub6PIGqRlEqDLDDa3QYrvkH9md7T8VjI32tKezpmk2px+ZkErdRKxBA93aeyJGei7N665GKA0SSENw=="
+      sm_oauth_token_secret_name: "umsl_oauth_token"
+      sm_webhooks_token_secret_name: "umsl_webhooks_token"
+      webhook_authentication: "GITHUB_HMAC"
+      privileged_mode: "true"
+      github_repo_owner: "dieple"
+      aws_account_id: ""
+      aws_region: ""
+      tags: {}
+    outputs:
+      - "badge_url"
+      - "artifact_store_bucket"
+#      - "webhook_id"
+#      - "webhook_url"
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "codepipeline"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      github_repo_names: "misc-bi-airflow"
+      ecr_image_repo_names: "misc-bi-airflow"
+      github_repo_branch: "cicd-airflow"
+      badge_enabled: "false"
+      build_compute_type: "BUILD_GENERAL1_SMALL"
+      build_image: "aws/codebuild/standard:2.0"
+      build_timeout: "60"
+      buildspec: ""
+      ecr_image_tag: ""
+      ecr_repo_uri: ""
+      ecs_cluster_name: ""
+      ecs_service_name: ""
+      eks_cluster_name: ""
+      eks_kubectl_role_arn: ""
+      environment_variables: [{}]
+      github_webhook_events: []
+      poll_source_changes: "true"
+      s3_bucket_force_destroy: "false"
+      webhook_enabled: "true"
+      webhook_filter_json_path: "$.ref"
+      webhook_filter_match_equals: "refs/heads/{Branch}"
+      webhook_target_action: "Source"
+      source_type: "GITHUB"
+      source_location: ""
+      github_oauth_token: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQG/CEnOjV1l2MADhXmKRZZxAAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDMNKkaEbsdepCOHJ2wIBEIBD/5Jlkf8kI9ay6KQLQHwbH0ACivCDQGFbZJmGYRKHLQ7SulSzq3ZHHvnAFiiTHpPbEAueQARVc64gWsC/XvnTEBWz1Q=="
+      github_webhooks_token: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQG/CEnOjV1l2MADhXmKRZZxAAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDMNKkaEbsdepCOHJ2wIBEIBD/5Jlkf8kI9ay6KQLQHwbH0ACivCDQGFbZJmGYRKHLQ7SulSzq3ZHHvnAFiiTHpPbEAueQARVc64gWsC/XvnTEBWz1Q=="
+      sm_oauth_token_secret_name: "dataops_oauth_token"
+      sm_webhooks_token_secret_name: "dataops_webhooks_token"
+      webhook_authentication: "GITHUB_HMAC"
+      privileged_mode: "true"
+      github_repo_owner: "River-Island"
+      aws_account_id: ""
+      aws_region: ""
+      tags: {}
+    outputs:
+      - "badge_url"
+#      - "webhook_id
+#      - "webhook_url"

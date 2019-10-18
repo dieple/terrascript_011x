@@ -1,0 +1,65 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-assume-role"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      admin_name: "admin"
+      admin_user_names: []
+      readonly_name: "readonly"
+      readonly_user_names: []
+    outputs:
+      - "group_admin_arn"
+      - "group_admin_id"
+      - "group_admin_name"
+      - "group_readonly_arn"
+      - "group_readonly_id"
+      - "group_readonly_name"
+      - "role_admin_arn"
+      - "role_admin_name"
+      - "role_readonly_arn"
+      - "role_readonly_name"
+      - "switchrole_admin_url"
+      - "switchrole_readonly_url"
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-assume-role"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      admin_name: "admin"
+      admin_user_names: []
+      readonly_name: "readonly"
+      readonly_user_names: []
+    outputs:
+      - "group_admin_arn"
+      - "group_admin_id"
+      - "group_admin_name"
+      - "group_readonly_arn"
+      - "group_readonly_id"
+      - "group_readonly_name"
+      - "role_admin_arn"
+      - "role_admin_name"
+      - "role_readonly_arn"
+      - "role_readonly_name"
+      - "switchrole_admin_url"
+      - "switchrole_readonly_url"
+

@@ -1,0 +1,67 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "og8"
+      name: "key_pair"
+      stage: "staging"
+      tags: {}
+    inputs:
+      key_name: ""
+      chmod_command: "chmod 600 %v"
+      private_key_extension: ".pem"
+      public_key_extension: ".pub"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "./tls_key_pair"
+    outputs:
+      - "key_name"
+      - "public_key"
+dataops_dev:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "og8"
+      name: "key_pair"
+      stage: "dev"
+      tags: {}
+    inputs:
+      key_name: ""
+      chmod_command: "chmod 600 %v"
+      private_key_extension: ".pem"
+      public_key_extension: ".pub"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "./tls_key_pair"
+    outputs:
+      - "key_name"
+      - "public_key"
+dataops_prod:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "og8"
+      name: "key_pair"
+      stage: "prod"
+      tags: {}
+    inputs:
+      key_name: ""
+      chmod_command: "chmod 600 %v"
+      private_key_extension: ".pem"
+      public_key_extension: ".pub"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "./tls_key_pair"
+    outputs:
+      - "public_key"
+      - "public_key"
+

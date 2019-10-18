@@ -1,0 +1,240 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      attributes: [ "cluster" ]
+      delimiter: "-"
+      enabled: "true"
+      name: "rds"
+      namespace: "og8"
+      stage: "staging"
+      tags: {}
+      project: "dataops"
+      cost_centre: "og8"
+    inputs:
+      port: 5432
+      preferred_backup_window: "18:00-19:00"
+      preferred_maintenance_window: "mon:19:00-mon:20:00"
+      backup_retention_period: 7
+      database_name: ""
+      kms_key_id: "arn:aws:kms:eu-west-1:561276803310:key/aa95c97b-074d-4c38-82bc-48c2abcbef7a"
+      master_username: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQHwT9cBe2/iwMgnyzVKbMROAAAAZjBkBgkqhkiG9w0BBwagVzBVAgEAMFAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMWh0x/6AznZqij8nXAgEQgCOS2ysawZMKP6mJQ5BvMW+wGeBNa7Akc9CtX0xozeRoiTfXGA=="
+      master_password: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQGeNciPN4wOGC5huhsr6wQDAAAAbjBsBgkqhkiG9w0BBwagXzBdAgEAMFgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM30gJ5ijW2CuHk3eXAgEQgCuG8n8PJ3nPQbXGj8xJVEvkHiX5FyELsI5ayOiLCPDPsb+JcJgPqtlGkau2"
+      engine: "aurora-postgresql"
+      engine_version: "10.7"
+      subnets: []
+      vpc_id: ""
+      replica_count: 2
+      replica_scale_enabled: "true"
+      replica_scale_min: "2"
+      replica_scale_max: "5"
+      monitoring_interval: "60"
+      monitoring_role_arn: ""
+      instance_type: "db.r4.large"
+      apply_immediately: "true"
+      skip_final_snapshot: "true"
+      family: "aurora-postgresql10"
+      tags: {}
+      auto_minor_version_upgrade: "true"
+      vpc_security_group_ids: []
+    outputs:
+      - "this_rds_cluster_database_name"
+      - "this_rds_cluster_endpoint"
+      - "this_rds_cluster_id"
+      - "this_rds_cluster_instance_endpoints"
+      - "this_rds_cluster_master_username"
+      - "this_rds_cluster_port"
+      - "this_rds_cluster_reader_endpoint"
+      - "this_rds_cluster_resource_id"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      attributes: [ "cluster" ]
+      delimiter: "-"
+      enabled: "true"
+      name: "rds"
+      namespace: "og8"
+      stage: "dev"
+      tags: {}
+      project: "dataops"
+      cost_centre: "og8"
+    inputs:
+      port: 5432
+      preferred_backup_window: "18:00-19:00"
+      preferred_maintenance_window: "mon:19:00-mon:20:00"
+      backup_retention_period: 7
+      database_name: ""
+      kms_key_id: "arn:aws:kms:eu-west-1:190033888840:key/bed0b309-6fb6-486b-9870-2c3188ff5b61"
+      master_username: "AQICAHiAkHLuG6Wm9yG6cYEm7GA2/gHfK03S20Lc4n5br7MfBwEP/3ADg1dixsS8gRLnGjWVAAAAZjBkBgkqhkiG9w0BBwagVzBVAgEAMFAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMJ7f5T9Y7UV1lvGomAgEQgCO1r/pgtvUs9RUOX5tokWUHDlqprIqzg4LNMeZd++ZgDEIbtQ=="
+      master_password: "AQICAHiAkHLuG6Wm9yG6cYEm7GA2/gHfK03S20Lc4n5br7MfBwFjKE6f5YSCbmN5bQnlfoM5AAAAbDBqBgkqhkiG9w0BBwagXTBbAgEAMFYGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMftvGrUXfrP//dsRhAgEQgCnTHoKs+dhA/gwJzNDu4oA5KXTpg+cLSA3M8jcX863caJQLMVBJmSWSQA=="
+      engine: "aurora-postgresql"
+      engine_version: "10.7"
+      subnets: []
+      vpc_id: ""
+      replica_count: 2
+      replica_scale_enabled: "true"
+      replica_scale_min: "2"
+      replica_scale_max: "5"
+      monitoring_interval: "60"
+      monitoring_role_arn: ""
+      instance_type: "db.r4.large"
+      apply_immediately: "true"
+      skip_final_snapshot: "true"
+      family: "aurora-postgresql10"
+      tags: {}
+      auto_minor_version_upgrade: "true"
+      vpc_security_group_ids: []
+    outputs:
+      - "this_rds_cluster_database_name"
+      - "this_rds_cluster_endpoint"
+      - "this_rds_cluster_id"
+      - "this_rds_cluster_instance_endpoints"
+      - "this_rds_cluster_master_username"
+      - "this_rds_cluster_port"
+      - "this_rds_cluster_reader_endpoint"
+      - "this_rds_cluster_resource_id"
+cloudops_staging:
+  account_name: "cloudops_staging"
+  module:
+    tag_label:
+      attributes: [ "cluster" ]
+      delimiter: "-"
+      enabled: "true"
+      name: "rds"
+      namespace: "automic"
+      stage: "staging"
+      tags: {}
+      project: "uc4"
+      cost_centre: "automic"
+    inputs:
+      port: 5432
+      preferred_backup_window: "18:00-19:00"
+      preferred_maintenance_window: "mon:19:00-mon:20:00"
+      backup_retention_period: 7
+      database_name: ""
+      kms_key_id: "arn:aws:kms:eu-west-1:558469419837:key/41d1ddbb-8895-475a-affc-36efaf2f34ed"
+      master_username: ""
+      master_password: ""
+      engine: "aurora-postgresql"
+      engine_version: "10.7"
+      subnets: []
+      vpc_id: ""
+      replica_count: 1
+      replica_scale_enabled: "true"
+      replica_scale_min: "1"
+      replica_scale_max: "5"
+      monitoring_interval: "60"
+      monitoring_role_arn: ""
+      instance_type: "db.r4.large"
+      apply_immediately: "true"
+      skip_final_snapshot: "true"
+      family: "aurora-postgresql10"
+      auto_minor_version_upgrade: "true"
+      vpc_security_group_ids: []
+      tags: {}
+    outputs:
+      - "this_rds_cluster_database_name"
+      - "this_rds_cluster_endpoint"
+      - "this_rds_cluster_id"
+      - "this_rds_cluster_instance_endpoints"
+      - "this_rds_cluster_master_username"
+      - "this_rds_cluster_port"
+      - "this_rds_cluster_reader_endpoint"
+      - "this_rds_cluster_resource_id"
+cloudops_prod:
+  account_name: "cloudops_prod"
+  module:
+    tag_label:
+      attributes: [ "cluster" ]
+      delimiter: "-"
+      enabled: "true"
+      name: "rds"
+      namespace: "automic"
+      stage: "prod"
+      tags: {}
+      project: "automic"
+      cost_centre: "automic"
+    inputs:
+      port: 5443
+      preferred_backup_window: "18:00-19:00"
+      preferred_maintenance_window: "mon:19:00-mon:20:00"
+      backup_retention_period: 7
+      database_name: ""
+      kms_key_id: "arn:aws:kms:eu-west-1:795357751823:key/b4fffdca-f64f-4409-9a3f-f8893a3c1dc1"
+      master_username: "AQICAHh+9r5F0paHrJD4nbzm3wktP5+DIIH8BwcbDVImwawWnQGKKB5Ux8X7UCTrXG2qS5NwAAAAZjBkBgkqhkiG9w0BBwagVzBVAgEAMFAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMy/8QoLdm6ABmhRQIAgEQgCNHDbo1AoVmLpa18mHTADbBnqgNY7pHCc/KckqhtBmkrJBlig=="
+      master_password: "AQICAHh+9r5F0paHrJD4nbzm3wktP5+DIIH8BwcbDVImwawWnQHt4yU2ieuXYAVQ/x/MTQwZAAAAbjBsBgkqhkiG9w0BBwagXzBdAgEAMFgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMKFuWM/uP2YR+FEpTAgEQgCsd97P0+A1R4nR4xK/6p2f/O7iwef1qebQD8dIPn5wsstKlupe8eVBDvg2z"
+      engine: "aurora-postgresql"
+      engine_version: "10.7"
+      subnets: []
+      vpc_id: ""
+      replica_count: 2
+      replica_scale_enabled: "true"
+      replica_scale_min: "2"
+      replica_scale_max: "5"
+      monitoring_interval: "60"
+      monitoring_role_arn: ""
+      instance_type: "db.r4.large"
+      apply_immediately: "true"
+      skip_final_snapshot: "true"
+      family: "aurora-postgresql10"
+      vpc_security_group_ids: []
+      auto_minor_version_upgrade: "false"
+      tags: {}
+    outputs:
+      - "this_rds_cluster_database_name"
+      - "this_rds_cluster_endpoint"
+      - "this_rds_cluster_id"
+      - "this_rds_cluster_instance_endpoints"
+      - "this_rds_cluster_master_username"
+      - "this_rds_cluster_port"
+      - "this_rds_cluster_reader_endpoint"
+      - "this_rds_cluster_resource_id"
+cloudops_dev:
+  account_name: "cloudops_dev"
+  module:
+    tag_label:
+      attributes: [ "cluster" ]
+      delimiter: "-"
+      enabled: "true"
+      name: "rds"
+      namespace: "automic"
+      stage: "dev"
+      tags: {}
+      project: "uc4"
+      cost_centre: ""
+    inputs:
+      port: 5432
+      preferred_backup_window: "18:00-19:00"
+      preferred_maintenance_window: "mon:19:00-mon:20:00"
+      backup_retention_period: 7
+      database_name: ""
+      kms_key_id: "arn:aws:kms:eu-west-1:092941714243:key/a38c88ee-2d10-4a6e-ba3b-f440590caa0e"
+      master_username: ""
+      master_password: ""
+      engine: "aurora-postgresql"
+      engine_version: "10.7"
+      subnets: []
+      vpc_id: ""
+      replica_count: 1
+      replica_scale_enabled: "true"
+      replica_scale_min: "1"
+      replica_scale_max: "5"
+      monitoring_interval: "60"
+      monitoring_role_arn: ""
+      instance_type: "db.r4.large"
+      apply_immediately: "true"
+      skip_final_snapshot: "true"
+      family: "aurora-postgresql10"
+      auto_minor_version_upgrade: "true"
+      vpc_security_group_ids: []
+      tags: {}
+    outputs:
+      - "this_rds_cluster_database_name"
+      - "this_rds_cluster_endpoint"
+      - "this_rds_cluster_id"
+      - "this_rds_cluster_instance_endpoints"
+      - "this_rds_cluster_master_username"
+      - "this_rds_cluster_port"
+      - "this_rds_cluster_reader_endpoint"
+      - "this_rds_cluster_resource_id"

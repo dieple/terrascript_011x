@@ -1,0 +1,104 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "og8"
+      name: "key_pair"
+      stage: "staging"
+      tags: {}
+    inputs:
+      key_name: ""
+      ecdsa_curve: "P256"
+      kms_key_id: ""
+      overwrite_ssm_parameter: "true"
+      rsa_bits: 4096
+      ssm_path_format: "/%s/%s"
+      ssm_path_prefix: "ssh_keys"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "~/.ssh"
+      ssh_private_key_name: ""
+      ssh_public_key_name: ""
+    outputs:
+      - "public_key"
+dataops_dev:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "og8"
+      name: "key_pair"
+      stage: "dev"
+      tags: {}
+    inputs:
+      key_name: ""
+      ecdsa_curve: "P256"
+      kms_key_id: ""
+      overwrite_ssm_parameter: "true"
+      rsa_bits: 4096
+      ssm_path_format: "/%s/%s"
+      ssm_path_prefix: "ssh_keys"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "~/.ssh"
+      ssh_private_key_name: ""
+      ssh_public_key_name: ""
+    outputs:
+      - "public_key"
+dataops_prod:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "og8"
+      name: "key_pair"
+      stage: "prod"
+      tags: {}
+    inputs:
+      key_name: ""
+      ecdsa_curve: "P256"
+      kms_key_id: ""
+      overwrite_ssm_parameter: "true"
+      rsa_bits: 4096
+      ssm_path_format: "/%s/%s"
+      ssm_path_prefix: "ssh_keys"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "~/.ssh"
+      ssh_private_key_name: ""
+      ssh_public_key_name: ""
+    outputs:
+      - "public_key"
+platform_staging:
+  account_name: "platform_staging"
+  module:
+    tag_label:
+      project: "platform"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "platform"
+      name: "key_pair"
+      stage: "staging"
+      tags: {}
+    inputs:
+      key_name: ""
+      ecdsa_curve: "P256"
+      kms_key_id: ""
+      overwrite_ssm_parameter: "true"
+      rsa_bits: 4096
+      ssm_path_format: "/%s/%s"
+      ssm_path_prefix: "ssh_keys"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "~/.ssh"
+      ssh_private_key_name: ""
+      ssh_public_key_name: ""
+    outputs:
+      - "public_key"

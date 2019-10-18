@@ -1,0 +1,69 @@
+platform_staging:
+  account_name: "platform_staging"
+  module:
+    tag_label:
+      project: "eks-poc"
+      cost_centre: ""
+      namespace: "platform"
+      stage: "staging"
+      name: "ecr"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+    inputs:
+      allowed_account_ids: ["402191394274", "944139678522", "626097613490"]
+      repository_names: ["eks-poc"]
+      allow_push: "true"
+      repo_lifecycle_info: {}
+      tags: {}
+    outputs:
+      - "registry_ids"
+      - "repository_urls"
+      - "repository_names"
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      stage: "staging"
+      name: "ecr"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      cost_centre: ""
+    inputs:
+      allowed_account_ids: ["190033888840", "645025723021", "665109639135"]
+      repository_names: ["misc-bi-airflow/airflow-core", "misc-bi-airflow/airflow-dataops", "misc-bi-airflow/dag-code",
+                         "misc-bi-airflow/airflow-eks", "misc-bi-airflow/sqlcl"]
+      allow_push: "true"
+      repo_lifecycle_info: {}
+      tags: {}
+    outputs:
+      - "registry_ids"
+      - "repository_urls"
+      - "repository_names"
+dataops_dev:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      stage: "dev"
+      name: "ecr"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+    inputs:
+      allowed_account_ids: ["190033888840", "645025723021", "665109639135"]
+      repository_names: ["misc-bi-airflow/airflow-core", "misc-bi-airflow/airflow-dataops", "misc-bi-airflow/dag-code",
+                         "misc-bi-airflow/airflow-eks", "misc-bi-airflow/sqlcl"]
+      allow_push: "true"
+      repo_lifecycle_info: {}
+      tags: {}
+    outputs:
+      - "registry_ids"
+      - "repository_urls"
+      - "repository_names"

@@ -1,0 +1,112 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      attributes: ["dataops"]
+      delimiter: "-"
+      enabled: "true"
+      name: "efs"
+      namespace: "og8"
+      stage: "staging"
+      tags: {}
+      project: "dataops"
+      cost_centre: "og8"
+    inputs:
+      availability_zones: []
+      name: ""
+      environment: "staging"
+      dns_name: ""
+      encrypted: "false"
+      mount_target_ip_address:
+      performance_mode: "generalPurpose"
+      provisioned_throughput_in_mibps: 10
+      security_groups: []
+      subnets: []
+      tags: {}
+      throughput_mode: "provisioned"
+      vpc_id: ""
+      zone_id: ""
+    outputs:
+      - "arn"
+      - "dns_name"
+      - "host"
+      - "id"
+      - "mount_target_dns_names"
+      - "mount_target_ids"
+      - "mount_target_ips"
+      - "network_interface_ids"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      attributes: ["dataops"]
+      delimiter: "-"
+      enabled: "true"
+      name: "efs"
+      environment: "prod"
+      namespace: "og8"
+      stage: "prod"
+      tags: {}
+      project: "dataops"
+      cost_centre: "og8"
+    inputs:
+      availability_zones: []
+      name: ""
+      dns_name: ""
+      encrypted: "false"
+      mount_target_ip_address:
+      performance_mode: "generalPurpose"
+      provisioned_throughput_in_mibps: 10
+      security_groups: []
+      subnets: []
+      tags: {}
+      throughput_mode: "provisioned"
+      vpc_id: ""
+      zone_id: ""
+    outputs:
+      - "arn"
+      - "dns_name"
+      - "host"
+      - "id"
+      - "mount_target_dns_names"
+      - "mount_target_ids"
+      - "mount_target_ips"
+      - "network_interface_ids"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      attributes: ["dataops"]
+      delimiter: "-"
+      enabled: "true"
+      name: "efs"
+      namespace: "og8"
+      stage: "dev"
+      tags: {}
+      project: "dataops"
+      cost_centre: "og8"
+    inputs:
+      availability_zones: []
+      name: ""
+      environment: "dev"
+      dns_name: ""
+      encrypted: "false"
+      mount_target_ip_address:
+      performance_mode: "generalPurpose"
+      provisioned_throughput_in_mibps: 10
+      security_groups: []
+      subnets: []
+      tags: {}
+      throughput_mode: "provisioned"
+      vpc_id: ""
+      zone_id: ""
+    outputs:
+      - "arn"
+      - "dns_name"
+      - "host"
+      - "id"
+      - "mount_target_dns_names"
+      - "mount_target_ids"
+      - "mount_target_ips"
+      - "network_interface_ids"
+

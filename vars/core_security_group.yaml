@@ -1,0 +1,121 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "core-sg"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      vpc_id: ""
+      ssh_cidr_block: ["193.105.212.250/32", "80.168.1.186/32", "10.200.208.0/21", "80.168.47.127/32"]
+      elb_cidr_block: ["10.0.0.0/8"]
+      office_cidr_block: ["193.105.212.250/32"]
+      vpc_cidr_block: []
+      rds_port: 5432
+      name: ""
+      tags: {}
+    outputs:
+      - "ssh_access_sg"
+      - "elb_access_sg"
+      - "efs_access_sg"
+      - "eks_worker_sg"
+      - "eks_cluster_sg"
+      - "codebuild_access_sg"
+      - "rds_access_sg"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "core-sg"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      vpc_id: ""
+      ssh_cidr_block: ["193.105.212.250/32", "80.168.1.186/32", "10.202.168.0/21", "80.168.47.127/32"]
+      elb_cidr_block: ["10.0.0.0/8"]
+      office_cidr_block: ["193.105.212.250/32"]
+      vpc_cidr_block: []
+      rds_port: 5432
+      name: ""
+      tags: {}
+    outputs:
+      - "ssh_access_sg"
+      - "elb_access_sg"
+      - "efs_access_sg"
+      - "eks_worker_sg"
+      - "eks_cluster_sg"
+      - "codebuild_access_sg"
+      - "rds_access_sg"
+dataops_prod:
+  account_name: "dataops_prod"
+  project: "dataops"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "core-sg"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      vpc_id: ""
+      ssh_cidr_block: ["193.105.212.250/32", "80.168.1.186/32", "10.202.176.0/21", "80.168.47.127/32"]
+      elb_cidr_block: ["10.0.0.0/8"]
+      office_cidr_block: ["193.105.212.250/32"]
+      vpc_cidr_block: []
+      rds_port: 5432
+      name: ""
+      tags: {}
+    outputs:
+      - "ssh_access_sg"
+      - "elb_access_sg"
+      - "efs_access_sg"
+      - "eks_worker_sg"
+      - "eks_cluster_sg"
+      - "codebuild_access_sg"
+      - "rds_access_sg"
+cloudops_prod:
+  account_name: "cloudops_prod"
+  module:
+    tag_label:
+      project: "automic"
+      cost_centre: ""
+      namespace: "automic"
+      name: "core-sg"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      vpc_id: ""
+      ssh_cidr_block: ["193.105.212.250/32", "80.168.1.186/32", "10.202.176.0/21", "80.168.47.127/32"]
+      elb_cidr_block: ["10.0.0.0/8"]
+      office_cidr_block: ["193.105.212.250/32"]
+      vpc_cidr_block: []
+      rds_port: 5443
+      name: ""
+      tags: {}
+    outputs:
+      - "ssh_access_sg"
+      - "elb_access_sg"
+      - "efs_access_sg"
+      - "eks_worker_sg"
+      - "eks_cluster_sg"
+      - "codebuild_access_sg"
+      - "rds_access_sg"

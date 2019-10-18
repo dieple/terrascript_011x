@@ -1,0 +1,85 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "oag"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      require_mfa: "true"
+      role_arns: {}
+      switchrole_url_template: "https://signin.aws.amazon.com/switchrole?account=%s&roleName=%s&displayName=%s"
+      tags: {}
+      user_names: []
+    outputs:
+      - "group_arn"
+      - "group_id"
+      - "group_name"
+      - "group_unique_id"
+      - "policy_id"
+      - "policy_name"
+      - "switchrole_urls"
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "oag"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      require_mfa: "true"
+      role_arns: {}
+      switchrole_url_template: "https://signin.aws.amazon.com/switchrole?account=%s&roleName=%s&displayName=%s"
+      tags: {}
+      user_names: []
+    outputs:
+      - "group_arn"
+      - "group_id"
+      - "group_name"
+      - "group_unique_id"
+      - "policy_id"
+      - "policy_name"
+      - "switchrole_urls"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "oag"
+      delimiter: "-"
+      stage: "prod"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      require_mfa: "true"
+      role_arns: {}
+      switchrole_url_template: "https://signin.aws.amazon.com/switchrole?account=%s&roleName=%s&displayName=%s"
+      tags: {}
+      user_names: []
+    outputs:
+      - "group_arn"
+      - "group_id"
+      - "group_name"
+      - "group_unique_id"
+      - "policy_id"
+      - "policy_name"
+      - "switchrole_urls"
+

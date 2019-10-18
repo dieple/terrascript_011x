@@ -1,0 +1,171 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-user"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      user_id: "dev-ri-lake-user"
+      policy_documents: []
+      actions_allow:
+      -
+        - "s3:GetBucketPolicy"
+        - "s3:GetBucketTagging"
+        - "s3:GetBucketVersioning"
+        - "s3:ListBucket"
+        - "s3:ListBucketByTags"
+        - "s3:ListBucketVersions"
+      -
+        - "s3:PutObject"
+        - "s3:PutObjectAcl"
+        - "s3:PutObjectTagging"
+        - "s3:PutObjectVersionAcl"
+        - "s3:PutObjectVersionTagging"
+        - "s3:GetObject"
+        - "s3:GetObjectAcl"
+        - "s3:GetObjectTagging"
+        - "s3:GetObjectVersion"
+        - "s3:GetObjectVersionAcl"
+        - "s3:GetObjectVersionTagging"
+        - "s3:DeleteObject"
+        - "s3:DeleteObjectTagging"
+        - "s3:DeleteObjectVersion"
+        - "s3:DeleteObjectVersionTagging"
+      resources_allow:
+      -
+        - "arn:aws:s3:::ri-lake/dev"
+        - "arn:aws:s3:::ri-lake"
+      -
+        - "arn:aws:s3:::ri-lake/dev/*"
+      actions_deny: []
+      path: "/"
+      force_destroy: false
+#      pgp_key: "kebybase:ri_tech"
+      pgp_key: "/scripts/dataops.gpg.pub.bin"
+    outputs:
+      - "user_name"
+      - "user_arn"
+      - "user_unique_id"
+      - "access_key_id"
+      - "secret_access_key"
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-user"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      user_id: "staging-ri-lake-user"
+      policy_documents: []
+      actions_allow:
+        -
+          - "s3:GetBucketPolicy"
+          - "s3:GetBucketTagging"
+          - "s3:GetBucketVersioning"
+          - "s3:ListBucket"
+          - "s3:ListBucketByTags"
+          - "s3:ListBucketVersions"
+        -
+          - "s3:PutObject"
+          - "s3:PutObjectAcl"
+          - "s3:PutObjectTagging"
+          - "s3:PutObjectVersionAcl"
+          - "s3:PutObjectVersionTagging"
+          - "s3:GetObject"
+          - "s3:GetObjectAcl"
+          - "s3:GetObjectTagging"
+          - "s3:GetObjectVersion"
+          - "s3:GetObjectVersionAcl"
+          - "s3:GetObjectVersionTagging"
+          - "s3:DeleteObject"
+          - "s3:DeleteObjectTagging"
+          - "s3:DeleteObjectVersion"
+          - "s3:DeleteObjectVersionTagging"
+      resources_allow:
+        -
+          - "arn:aws:s3:::ri-lake/staging"
+          - "arn:aws:s3:::ri-lake"
+        -
+          - "arn:aws:s3:::ri-lake/staging/*"
+      actions_deny: []
+      path: "/"
+      force_destroy: false
+      #      pgp_key: "kebybase:ri_tech"
+      pgp_key: "/scripts/dataops.gpg.pub.bin"
+    outputs:
+      - "user_name"
+      - "user_arn"
+      - "user_unique_id"
+      - "access_key_id"
+      - "secret_access_key"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      project: "dataops"
+      cost_centre: ""
+      namespace: "og8"
+      name: "iam-user"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      user_id: "prod-ri-lake-user"
+      policy_documents: []
+      actions_allow:
+        -
+          - "s3:GetBucketPolicy"
+          - "s3:GetBucketTagging"
+          - "s3:GetBucketVersioning"
+          - "s3:ListBucket"
+          - "s3:ListBucketByTags"
+          - "s3:ListBucketVersions"
+        -
+          - "s3:PutObject"
+          - "s3:PutObjectAcl"
+          - "s3:PutObjectTagging"
+          - "s3:PutObjectVersionAcl"
+          - "s3:PutObjectVersionTagging"
+          - "s3:GetObject"
+          - "s3:GetObjectAcl"
+          - "s3:GetObjectTagging"
+          - "s3:GetObjectVersion"
+          - "s3:GetObjectVersionAcl"
+          - "s3:GetObjectVersionTagging"
+          - "s3:DeleteObject"
+          - "s3:DeleteObjectTagging"
+          - "s3:DeleteObjectVersion"
+          - "s3:DeleteObjectVersionTagging"
+      resources_allow:
+        -
+          - "arn:aws:s3:::ri-lake/prod"
+          - "arn:aws:s3:::ri-lake"
+        -
+          - "arn:aws:s3:::ri-lake/prod/*"
+      actions_deny: []
+      path: "/"
+      force_destroy: false
+      #      pgp_key: "kebybase:ri_tech"
+      pgp_key: "/scripts/dataops.gpg.pub.bin"
+    outputs:
+      - "user_name"
+      - "user_arn"
+      - "user_unique_id"
+      - "access_key_id"
+      - "secret_access_key"

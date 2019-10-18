@@ -1,0 +1,114 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      cost_centre: ""
+      enabled: "true"
+      namespace: "og8"
+      name: "vpn"
+      delimiter: "-"
+      stage: "staging"
+      attributes: []
+      project: "dataops"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      customer_gateway_bgp_asn: 65000
+      customer_gateway_ip_address: ""
+      route_table_ids: []
+      tags: {}
+      vpc_id: ""
+      vpn_connection_static_routes_destinations: []
+      vpn_connection_static_routes_only: "true"
+      vpn_connection_tunnel1_inside_cidr: ""
+      vpn_connection_tunnel1_preshared_key: ""
+      vpn_connection_tunnel2_inside_cidr: ""
+      vpn_connection_tunnel2_preshared_key: ""
+      vpn_gateway_amazon_side_asn: 64512
+    outputs:
+      - "customer_gateway_id"
+      - "vpn_connection_customer_gateway_configuration"
+      - "vpn_connection_id"
+      - "vpn_connection_tunnel1_address"
+      - "vpn_connection_tunnel1_cgw_inside_address"
+      - "vpn_connection_tunnel1_vgw_inside_address"
+      - "vpn_connection_tunnel2_address"
+      - "vpn_connection_tunnel2_cgw_inside_address"
+      - "vpn_connection_tunnel2_vgw_inside_address"
+      - "vpn_gateway_id"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      cost_centre: ""
+      enabled: "true"
+      namespace: "og8"
+      name: "vpn"
+      delimiter: "-"
+      stage: "dev"
+      attributes: []
+      project: "dataops"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      customer_gateway_bgp_asn: 65000
+      customer_gateway_ip_address: ""
+      route_table_ids: []
+      tags: {}
+      vpc_id: ""
+      vpn_connection_static_routes_destinations: []
+      vpn_connection_static_routes_only: "true"
+      vpn_connection_tunnel1_inside_cidr: ""
+      vpn_connection_tunnel1_preshared_key: ""
+      vpn_connection_tunnel2_inside_cidr: ""
+      vpn_connection_tunnel2_preshared_key: ""
+      vpn_gateway_amazon_side_asn: 64512
+    outputs:
+      - "customer_gateway_id"
+      - "vpn_connection_customer_gateway_configuration"
+      - "vpn_connection_id"
+      - "vpn_connection_tunnel1_address"
+      - "vpn_connection_tunnel1_cgw_inside_address"
+      - "vpn_connection_tunnel1_vgw_inside_address"
+      - "vpn_connection_tunnel2_address"
+      - "vpn_connection_tunnel2_cgw_inside_address"
+      - "vpn_connection_tunnel2_vgw_inside_address"
+      - "vpn_gateway_id"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      cost_centre: ""
+      enabled: "true"
+      namespace: "og8"
+      name: "vpn"
+      delimiter: "-"
+      stage: "sprodtaging"
+      attributes: []
+      project: "dataops"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      customer_gateway_bgp_asn: 65000
+      customer_gateway_ip_address: ""
+      route_table_ids: []
+      tags: {}
+      vpc_id: ""
+      vpn_connection_static_routes_destinations: []
+      vpn_connection_static_routes_only: "true"
+      vpn_connection_tunnel1_inside_cidr: ""
+      vpn_connection_tunnel1_preshared_key: ""
+      vpn_connection_tunnel2_inside_cidr: ""
+      vpn_connection_tunnel2_preshared_key: ""
+      vpn_gateway_amazon_side_asn: 64512
+    outputs:
+      - "customer_gateway_id"
+      - "vpn_connection_customer_gateway_configuration"
+      - "vpn_connection_id"
+      - "vpn_connection_tunnel1_address"
+      - "vpn_connection_tunnel1_cgw_inside_address"
+      - "vpn_connection_tunnel1_vgw_inside_address"
+      - "vpn_connection_tunnel2_address"
+      - "vpn_connection_tunnel2_cgw_inside_address"
+      - "vpn_connection_tunnel2_vgw_inside_address"
+      - "vpn_gateway_id"

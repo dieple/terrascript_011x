@@ -1,0 +1,75 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  project: "dataops"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "route53_zone"
+      namespace: "og8"
+      stage: "dev"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      include_tag_label_: "true"
+      parent_zone_id: ""
+      parent_zone_name: "dev.dataops.ri-tech.io"
+      zone_name: "k8s.dev.dataops.ri-tech.io"
+    outputs:
+      - "fqdn"
+      - "parent_zone_id"
+      - "parent_zone_name"
+      - "zone_id"
+      - "zone_name"
+dataops_staging:
+  account_name: "dataops_staging"
+  project: "dataops"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "route53-zone"
+      namespace: "og8"
+      stage: "staging"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      include_tag_label_: "true"
+      parent_zone_id: ""
+      parent_zone_name: "staging.dataops.ri-tech.io"
+      zone_name: "k8s.staging.dataops.ri-tech.io"
+    outputs:
+      - "fqdn"
+      - "parent_zone_id"
+      - "parent_zone_name"
+      - "zone_id"
+      - "zone_name"
+dataops_prod:
+  account_name: "dataops_prod"
+  project: "dataops"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "route53-zone"
+      namespace: "og8"
+      stage: "prod"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      include_tag_label_: "true"
+      parent_zone_id: ""
+      parent_zone_name: "prod.dataops.ri-tech.io"
+      zone_name: "k8s.prod.dataops.ri-tech.io"
+    outputs:
+      - "fqdn"
+      - "parent_zone_id"
+      - "parent_zone_name"
+      - "zone_id"
+      - "zone_name"

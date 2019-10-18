@@ -1,0 +1,45 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "s3-bucket"
+      namespace: "og8"
+      stage: "staging"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      acl: "private"
+      allow_encrypted_uploads_only: "false"
+      allowed_bucket_actions:
+        - "s3:Getbject"
+        - "s3:GetObjectVersion"
+        - "s3:GetBucketVersioning"
+        - "s3:PutObject"
+        - "s3:DeleteObject"
+      force_destroy: "false"
+      kms_master_key_arn: ""
+      lifecycle_rule_enabled: "false"
+      noncurrent_version_expiration_days: 90
+      noncurrent_version_transition_days: 30
+      policy: ""
+      prefix: ""
+      region: "eu-west-1"
+      sse_algorithm: "AES256"
+      tags: {}
+      user_enabled: "false"
+      versioning_enabled: "true"
+    outputs:
+      - "access_key_id"
+      - "bucket_arn"
+      - "bucket_domain_name"
+      - "bucket_id"
+      - "secret_access_key"
+      - "user_arn"
+      - "user_enabled"
+      - "user_name"
+      - "user_unique_id"
+

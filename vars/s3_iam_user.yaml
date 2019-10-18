@@ -1,0 +1,82 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "s3-iam"
+      namespace: "og8"
+      stage: "staging"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      include_tag_label_: true
+      force_destroy: "false"
+      path: "/"
+      s3_actions: ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
+      s3_resources: ["arn:aws:s3:::og8-staging-log-storage-dataops/*"]
+      sse_algorithm: "AES256"
+      tags: {}
+    outputs:
+      - "access_key_id"
+      - "secret_access_key"
+      - "user_arn"
+      - "user_name"
+      - "user_unique_id"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "s3-iam"
+      namespace: "og8"
+      stage: "dev"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      include_tag_label_: true
+      force_destroy: "false"
+      path: "/"
+      s3_actions: ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
+      s3_resources: ["arn:aws:s3:::og8-dev-log-storage-dataops/*"]
+      sse_algorithm: "AES256"
+      tags: {}
+    outputs:
+      - "access_key_id"
+      - "secret_access_key"
+      - "user_arn"
+      - "user_name"
+      - "user_unique_id"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "s3-iam"
+      namespace: "og8"
+      stage: "prod"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      include_tag_label_: true
+      force_destroy: "false"
+      path: "/"
+      s3_actions: ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
+      s3_resources: ["arn:aws:s3:::og8-prod-log-storage-dataops/*"]
+      sse_algorithm: "AES256"
+      tags: {}
+    outputs:
+      - "access_key_id"
+      - "secret_access_key"
+      - "user_arn"
+      - "user_name"
+      - "user_unique_id"
+

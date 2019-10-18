@@ -1,0 +1,73 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "iam-role-efs-provisioner"
+      namespace: "og8"
+      stage: "dev"
+      project: "dataops"
+      cost_centre: "dataops"
+      tags: {}
+    inputs:
+      policy_description: "Allow EKS Worker nodes to access EFS actions"
+      principals_services_arns: ["ec2.amazonaws.com"]
+      role_description: "EFS provisioner role for pods to access EFS"
+      eks_worker_role_name: ""
+      role_name: ""
+    outputs:
+      - "arn"
+      - "id"
+      - "name"
+      - "policy"
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "iam-role-efs-provisioner"
+      namespace: "og8"
+      stage: "staging"
+      project: "dataops"
+      cost_centre: "dataops"
+      tags: {}
+    inputs:
+      policy_description: "Allow EKS Worker nodes to access EFS actions"
+      principals_services_arns: ["ec2.amazonaws.com"]
+      role_description: "EFS provisioner role for pods to access EFS"
+      eks_worker_role_name: ""
+      role_name: ""
+    outputs:
+      - "arn"
+      - "id"
+      - "name"
+      - "policy"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "iam-role-efs-provisioner"
+      namespace: "og8"
+      stage: "prod"
+      project: "dataops"
+      cost_centre: "dataops"
+      tags: {}
+    inputs:
+      policy_description: "Allow EKS Worker nodes to access EFS actions"
+      principals_services_arns: ["ec2.amazonaws.com"]
+      role_description: "EFS provisioner role for pods to access EFS"
+      eks_worker_role_name: ""
+      role_name: ""
+    outputs:
+      - "arn"
+      - "id"
+      - "name"
+      - "policy"
+

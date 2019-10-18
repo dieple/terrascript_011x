@@ -1,0 +1,101 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "og8"
+      name: "key_pair"
+      stage: "staging"
+      tags: {}
+    inputs:
+      key_name: ""
+      generate_ssh_key: "true"
+      chmod_command: "chmod 600 %v"
+      private_key_extension: ".pem"
+      public_key_extension: ".pub"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "~/.ssh"
+    outputs:
+      - "key_name"
+      - "private_key_filename"
+      - "public_key"
+      - "public_key_filename"
+dataops_dev:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "umsl"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "ek-group"
+      name: "key-pair"
+      stage: "dev"
+      tags: {}
+    inputs:
+      key_name: ""
+      generate_ssh_key: "true"
+      chmod_command: "chmod 600 %v"
+      private_key_extension: ".pem"
+      public_key_extension: ".pub"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "./ssh_key_pair"
+    outputs:
+      - "key_name"
+      - "private_key_filename"
+      - "public_key"
+      - "public_key_filename"
+dataops_prod:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "og8"
+      name: "key_pair"
+      stage: "prod"
+      tags: {}
+    inputs:
+      key_name: ""
+      generate_ssh_key: true
+      chmod_command: "chmod 600 %v"
+      private_key_extension: ".pem"
+      public_key_extension: ".pub"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "~/.ssh"
+    outputs:
+      - "key_name"
+      - "private_key_filename"
+      - "public_key"
+      - "public_key_filename"
+cloudops_dev:
+  account_name: "cloudops_staging"
+  module:
+    tag_label:
+      project: "cloudops"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "cloudops"
+      name: "keypair"
+      stage: "dev"
+      cost_centre: ""
+      tags: {}
+    inputs:
+      key_name: ""
+      generate_ssh_key: "true"
+      chmod_command: "chmod 600 %v"
+      private_key_extension: ".pem"
+      public_key_extension: ".pub"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "./ssh_key_pair"
+    outputs:
+      - "key_name"
+      - "private_key_filename"
+      - "public_key"
+      - "public_key_filename"

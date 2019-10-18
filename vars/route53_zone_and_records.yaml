@@ -1,0 +1,60 @@
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "route53-zone"
+      namespace: "ek-group"
+      stage: "dev"
+      tags: {}
+      project: "umsl"
+      cost_centre: "future-airlines"
+    inputs:
+      zone_name: "dev-umsl.dataops.ri-tech.io"
+      records: []
+      tags: {}
+    outputs:
+      - "zone_id"
+      - "zone_name"
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "route53-zone"
+      namespace: "og8"
+      stage: "staging"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      zone_name: "staging.dataops.ri-tech.io"
+      records: []
+      tags: {}
+    outputs:
+      - "zone_id"
+      - "zone_name"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "route53-zone"
+      namespace: "og8"
+      stage: "sprodtaging"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      zone_name: "sprodtaging.dataops.ri-tech.io"
+      records: []
+      tags: {}
+    outputs:
+      - "zone_id"
+      - "zone_name"

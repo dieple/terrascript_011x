@@ -1,0 +1,147 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  module:
+    tag_label:
+      project: "dataops"
+      delimiter: "-"
+      enabled: "true"
+      name: "bastion"
+      attributes: []
+      namespace: "og8"
+      stage: "staging"
+      cost_centre: ""
+      tags: {}
+    inputs:
+      bastion_name: ""
+      allowed_cidr_blocks: ["80.168.47.127/32", "193.105.212.250/32"]
+      instance_type: "t3.micro"
+      ssh_user: "ec2-user"
+      user_data: []
+      volume_size: "50"
+      public_key_data: ""
+      max_size: "1"
+      min_size: "1"
+      desired_capacity: "1"
+      wait_for_capacity_timeout: "10m"
+      cooldown: "300"
+      health_check_grace_period: "300"
+      scale_down_cron: "0 23 * * *"
+      scale_up_cron: "0 8 * * MON-FRI"
+      scale_down_min_size: "1"
+      scale_down_desired_capacity: "1"
+    outputs:
+      - "private_ip"
+      - "public_ip"
+      - "role"
+      - "security_group_id"
+      - "ssh_user"
+dataops_prod:
+  account_name: "dataops_prod"
+  module:
+    tag_label:
+      project: "dataops"
+      delimiter: "-"
+      enabled: "true"
+      name: "bastion"
+      attributes: []
+      namespace: "og8"
+      stage: "prod"
+      cost_centre: ""
+      tags: {}
+    inputs:
+      bastion_name: ""
+      allowed_cidr_blocks: ["80.168.47.127/32", "193.105.212.250/32"]
+      instance_type: "t3.micro"
+      ssh_user: "ec2-user"
+      user_data: []
+      volume_size: "50"
+      public_key_data: ""
+      max_size: "1"
+      min_size: "1"
+      desired_capacity: "1"
+      wait_for_capacity_timeout: "10m"
+      cooldown: "300"
+      health_check_grace_period: "300"
+      scale_down_cron: "0 23 * * *"
+      scale_up_cron: "0 8 * * MON-FRI"
+      scale_down_min_size: "1"
+      scale_down_desired_capacity: "1"
+    outputs:
+      - "private_ip"
+      - "public_ip"
+      - "role"
+      - "security_group_id"
+      - "ssh_user"
+dataops_dev:
+  account_name: "dataops_dev"
+  module:
+    tag_label:
+      project: "dataops"
+      delimiter: "-"
+      enabled: "true"
+      name: "bastion"
+      namespace: "og8"
+      attributes: []
+      stage: "dev"
+      cost_centre: ""
+      tags: {}
+    inputs:
+      bastion_name: ""
+      allowed_cidr_blocks: ["80.168.47.127/32", "193.105.212.250/32"]
+      instance_type: "t3.micro"
+      ssh_user: "ec2-user"
+      user_data: []
+      volume_size: "50"
+      public_key_data: ""
+      max_size: "1"
+      min_size: "1"
+      desired_capacity: "1"
+      wait_for_capacity_timeout: "10m"
+      cooldown: "300"
+      health_check_grace_period: "300"
+      scale_down_cron: "0 23 * * *"
+      scale_up_cron: "0 8 * * MON-FRI"
+      scale_down_min_size: "1"
+      scale_down_desired_capacity: "1"
+    outputs:
+      - "private_ip"
+      - "public_ip"
+      - "role"
+      - "security_group_id"
+      - "ssh_user"
+platform_staging:
+  account_name: "platform_staging"
+  module:
+    tag_label:
+      project: "eks-poc"
+      namespace: "platform"
+      stage: "staging"
+      name: "bastion"
+      attributes: []
+      enabled: "true"
+      delimiter: "-"
+      tags: {}
+    inputs:
+      bastion_name: ""
+      allowed_cidr_blocks: ["80.168.47.127/32", "193.105.212.250/32"]
+      instance_type: "t3.micro"
+      ssh_user: "ec2-user"
+      user_data: []
+      volume_size: "50"
+      public_key_data: ""
+      max_size: "1"
+      min_size: "1"
+      desired_capacity: "1"
+      wait_for_capacity_timeout: "10m"
+      cooldown: "300"
+      health_check_grace_period: "300"
+      scale_down_cron: "0 23 * * *"
+      scale_up_cron: "0 8 * * MON-FRI"
+      scale_down_min_size: "1"
+      scale_down_desired_capacity: "1"
+    outputs:
+      - "private_ip"
+      - "public_ip"
+      - "role"
+      - "security_group_id"
+      - "ssh_user"
