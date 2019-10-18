@@ -65,7 +65,7 @@ def process_eks(ts, input_kwargs, label, aws_account_data, src_data, backend_dat
   input_kwargs["cluster_security_group_id"] = data_core_security_group.eks_cluster_sg
   input_kwargs["cluster_iam_role_name"] = data_iam_role_eks_cluster.name
 
-  # since terrascript object (ts), is a run evaluation object model, we have to resort to boto3
+  # since terrascript object (ts), is a runtime evaluation object model, we have to resort to boto3
   # to fetch networking upfront for manipulations of below:
   tag_filter = input_kwargs["vpc_tag_filter"]
   filtered_vpc_id = get_vpc_id(region, tag_filter)
