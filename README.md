@@ -44,8 +44,8 @@ This tool can be built on any accounts/environments in DRY code concept.
 
 1. mkdir -p $HOME/{repos,.aws,.kube, .ssh, .terraform.d/plugin-cache} on your host machine
 1. cd $HOME/repos
-1. git clone git@github.com:dieple/builder_tools.git
-1. git clone git@github.com:dieple/terrascript_011x.git
+1. git clone https://github.com/dieple/builder_tools.git
+1. git clone https://github.com/dieple/terrascript_011x.git
 1. AWS Vault profiles setup 
 1. Ability to run the [builder_tools](https://github.com/dieple/builder_tools.git) Docker image
 
