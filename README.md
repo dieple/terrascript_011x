@@ -71,7 +71,7 @@ To interact with DataOps AWS accounts and EKS clusters, it is recommended to use
 Note - the `builder_tools` container mounts a local directory 
 containing your source code to `/repos`, which we use further below! 
 
-Windows users, see the [builder-tools](https://github.com/dieple/builder-tools#option-1---create-your-own-launch-script) 
+Windows users, see the [builder-tools](https://github.com/dieple/builder_tools#option-1---create-your-own-launch-script) 
 repo documentation to understand how to mount your host machine path into (1) WSL and then into (2) 
 your `builder_tools` Docker container.
  
