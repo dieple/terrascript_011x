@@ -54,7 +54,6 @@ dataops_staging:
       attributes: []
       delimiter: "-"
       enabled: "true"
-      cost_centre: ""
     inputs:
       allowed_account_ids: ["190033888840", "645025723021", "665109639135"]
       repository_names: ["misc-bi-airflow/airflow-core", "misc-bi-airflow/airflow-dataops", "misc-bi-airflow/dag-code",
