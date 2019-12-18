@@ -137,6 +137,7 @@ def generate_terraform_backend_provider_and_label(inargs, ts, add_backend=True):
   # backend
   backend_data_dict["bucket"] = backend_data[environment]['terraform']['backend']['bucket']
   backend_data_dict["encrypt"] = backend_data[environment]['terraform']['backend']['encrypt']
+  backend_data_dict["dynamodb_table"] = backend_data[environment]['terraform']['backend']['dynamodb_table']
   backend_data_dict["region"] = p_data[environment]['provider']['aws']['region']
 
   # always in this format: infrastructure/<module>/<environment>/terraform.tfstate
@@ -213,11 +214,20 @@ def tfrun(terrascript, args):
   # Richard commented use of aws-vault to try using scripts/assume-role.sh instead.
   # TODO: remove this commented block if we don't hit nested session errors.
   if args['trace']:
-    tfplan = "cd {0} && unset AWS_VAULT && export TF_LOG=TRACE && aws-vault exec {1} -- {2}".format(gen_path, args['profile'], tf_cmd)
-    tfapply = "cd {0} && unset AWS_VAULT && export TF_LOG=TRACE && aws-vault exec {1}  -- terraform apply tfplan.txt".format(gen_path, args['profile'])
+    if args['awsvault'] == True:
+      # Assume roles using aws-vault
+      tfplan = "cd {0} && unset AWS_VAULT && export TF_LOG=TRACE && aws-vault exec {1} -- {2}".format(gen_path, args['profile'], tf_cmd)
+      tfapply = "cd {0} && unset AWS_VAULT && export TF_LOG=TRACE && aws-vault exec {1}  -- terraform apply tfplan.txt".format(gen_path, args['profile'])
+    else:
+      tfplan = "cd {0} && export TF_LOG=TRACE && {1}".format(gen_path, tf_cmd)
+      tfapply = "cd {0} && export TF_LOG=TRACE && terraform apply tfplan.txt".format(gen_path)
   else:
-    tfplan = "cd {0} && unset AWS_VAULT && aws-vault exec {1} -- {2}".format(gen_path, args['profile'], tf_cmd)
-    tfapply = "cd {0} && unset AWS_VAULT && aws-vault exec {1}  -- terraform apply tfplan.txt".format(gen_path, args['profile'])
+    if args['awsvault'] == True:
+      tfplan = "cd {0} && unset AWS_VAULT && aws-vault exec {1} -- {2}".format(gen_path, args['profile'], tf_cmd)
+      tfapply = "cd {0} && unset AWS_VAULT && aws-vault exec {1}  -- terraform apply tfplan.txt".format(gen_path, args['profile'])
+    else:
+      tfplan = "cd {0} && {1}".format(gen_path, tf_cmd)
+      tfapply = "cd {0} && terraform apply tfplan.txt".format(gen_path)
 
   # if args['trace']:
   #     tfplan = "cd {0} && unset AWS_VAULT && export TF_LOG=TRACE && . assume-role.sh {1} && {2}".format(gen_path, args['profile'], tf_cmd)

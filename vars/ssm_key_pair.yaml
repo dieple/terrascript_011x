@@ -1,3 +1,29 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      project: "poc"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "travelex"
+      name: "key_pair"
+      stage: "platform_testing"
+      tags: {}
+    inputs:
+      key_name: ""
+      ecdsa_curve: "P256"
+      kms_key_id: ""
+      overwrite_ssm_parameter: "true"
+      rsa_bits: 4096
+      ssm_path_format: "/%s/%s"
+      ssm_path_prefix: "ssh_keys"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "~/.ssh"
+      ssh_private_key_name: ""
+      ssh_public_key_name: ""
+    outputs:
+      - "public_key"
 dataops_staging:
   account_name: "dataops_staging"
   module:

@@ -1,3 +1,49 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      namespace: "travelex"
+      stage: "platform-testing"
+      name: "tf-state"
+      attributes: []
+      delimiter: "-"
+      project: "poc"
+      cost_centre: "platform-engineering"
+      tags: {}
+    inputs:
+      include_tag_label_: true
+      acl: "private"
+      additional_tag_map: {}
+      allowed_remote_accounts: ["744482186728"]
+      block_public_acls: "false"
+      block_public_policy: "false"
+      context: {}
+      enable_server_side_encryption: "false"
+      environment: "test"
+      force_destroy: "false"
+      ignore_public_acls: "false"
+      mfa_delete: "false"
+      prevent_unencrypted_uploads: "true"
+      profile: ""
+      read_capacity: 5
+      regex_replace_chars: "/[^a-zA-Z0-9-]/"
+      region: ""
+      restrict_public_buckets: "false"
+      role_arn: ""
+      tags: {}
+      terraform_backend_config_file_name: "terraform.tf"
+      terraform_backend_config_file_path: ""
+      terraform_state_file: "terraform.tfstate"
+      terraform_version: "11.0.7"
+      write_capacity: 5
+    outputs:
+      - "dynamodb_table_arn"
+      - "dynamodb_table_id"
+      - "dynamodb_table_name"
+      - "s3_bucket_arn"
+      - "s3_bucket_domain_name"
+      - "s3_bucket_id"
+      - "terraform_backend_config"
 dataops_staging:
   account_name: "dataops_staging"
   module:

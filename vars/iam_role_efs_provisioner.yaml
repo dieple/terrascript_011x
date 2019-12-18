@@ -1,3 +1,27 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "iam-role-efs-provisioner"
+      namespace: "travelex"
+      stage: "platform_testing"
+      project: "poc"
+      cost_centre: "platform-engineering"
+      tags: {}
+    inputs:
+      policy_description: "Allow EKS Worker nodes to access EFS actions"
+      principals_services_arns: ["ec2.amazonaws.com"]
+      role_description: "EFS provisioner role for pods to access EFS"
+      eks_worker_role_name: ""
+      role_name: ""
+    outputs:
+      - "arn"
+      - "id"
+      - "name"
+      - "policy"
 dataops_dev:
   account_name: "dataops_dev"
   module:

@@ -50,6 +50,7 @@ def process_arguments():
     optional.add_argument('-r', '--region', help='Build region', required=False, default="eu-west-1")
     # optional.add_argument('-g', '--generate', help='Terraform generated path', required=False, default='/repos/ts-generate')
     optional.add_argument('-k', '--eksTags', default=False, help='Create VPC EKS tags')
+    optional.add_argument('-w', '--awsvault', help='Assume role using AWS-Vault session?', required=False, default=False)
     #parser._action_groups.append(optional)
     return parser.parse_args()
 

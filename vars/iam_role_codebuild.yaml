@@ -1,3 +1,84 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      project: "poc"
+      cost_centre: "platform-engineering"
+      namespace: "travelex"
+      name: "iam-role-codebuild"
+      delimiter: "-"
+      stage: "platform_testing"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: "iam-role-codebuild"
+      actions_allow:
+        -
+          - "ec2:DescribeSecurityGroups"
+          - "ec2:DescribeSubnets"
+        -
+          - "codebuild:*"
+          - "iam:PassRole"
+          - "codecommit:GitPull"
+        -
+          - "logs:FilterLogEvents"
+          - "logs:GetLogEvents"
+          - "logs:CreateLogGroup"
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+        -
+          - "s3:CreateBucket"
+          - "s3:GetObject"
+          - "s3:List*"
+          - "s3:PutObject"
+          - "s3:GetBucketAcl"
+          - "s3:GetBucketLocation"
+          - "s3:GetObjectVersion"
+          - "s3:GetBucketVersioning"
+        -
+          - "ecr:BatchCheckLayerAvailability"
+          - "ecr:GetDownloadUrlForLayer"
+          - "ecr:BatchGetImage"
+          - "ecr:BatchCheckLayerAvailability"
+          - "ecr:PutImage"
+          - "ecr:InitiateLayerUpload"
+          - "ecr:UploadLayerPart"
+          - "ecr:CompleteLayerUpload"
+          - "ecr:GetAuthorizationToken"
+        -
+          - "ecs:RegisterTaskDefinition"
+          - "ecs:DescribeTaskDefinition"
+          - "ecs:DescribeServices"
+          - "ecs:CreateService"
+          - "ecs:ListServices"
+          - "ecs:UpdateService"
+      resources_allow:
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+        -
+          - "*"
+      actions_deny: []
+      principals:
+        Service: ["codebuild.amazonaws.com", "codepipeline.amazonaws.com"]
+      role_description: "codebuild iam role"
+      policy_description: "Policy for the code build iam role"
+      policy_documents: []
+      create_ec2_profile: false
+      max_session_duration: 3600
+    outputs:
+      - "name"
+      - "arn"
+      - "id"
+      - "policy"
 dataops_dev:
   account_name: "dataops_dev"
   module:

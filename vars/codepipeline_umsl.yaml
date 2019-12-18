@@ -1,3 +1,61 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      project: "poc"
+      cost_centre: "platform-engineering"
+      namespace: "travelex"
+      name: "codepipeline-umsl"
+      delimiter: "-"
+      stage: "platform_testing"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      github_repo_names: "umsl"
+      ecr_image_repo_names: "umsl"
+      name: "umsl"
+      stage: "platform_testing"
+      github_repo_branch: "master"
+      badge_enabled: "false"
+      build_compute_type: "BUILD_GENERAL1_SMALL"
+      build_image: "aws/codebuild/standard:2.0"
+      build_timeout: "60"
+      buildspec: ""
+      codebuild_service_policy_arn: ""
+      codebuild_service_role_arn: ""
+      codepipeline_role_arn: ""
+      ecr_image_tag: ""
+      ecr_repo_uri: ""
+      ecs_cluster_name: ""
+      ecs_service_name: ""
+      eks_cluster_name: ""
+      eks_kubectl_role_arn: ""
+      environment_variables: [{}]
+      github_webhook_events: []
+      poll_source_changes: "true"
+      s3_bucket_force_destroy: "false"
+      webhook_enabled: "true"
+      webhook_filter_json_path: "$.ref"
+      webhook_filter_match_equals: "refs/heads/{Branch}"
+      webhook_target_action: "Source"
+      source_type: "GITHUB"
+      source_location: "https://github.com"
+      github_oauth_token: "AQICAHjKA4iHZKv73Pv+s7FvUjk5rD9CLNsvEAUcmvVfHdnXTAG9f9ZirIk0u6BuC8Mc7Ny/AAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDC1oSDA/1QwD1HiPPwIBEIBDJ8Sw5JX4DMZnWPtcMkhR2DSOMcSqOVnAzqHW2MqC3fcM6wfwlC/L7sdixFDqFGEBvVCL9xZOJRG+zC5s8dlaQRcNSA=="
+      github_webhooks_token: "AQICAHjKA4iHZKv73Pv+s7FvUjk5rD9CLNsvEAUcmvVfHdnXTAG9f9ZirIk0u6BuC8Mc7Ny/AAAAhzCBhAYJKoZIhvcNAQcGoHcwdQIBADBwBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDC1oSDA/1QwD1HiPPwIBEIBDJ8Sw5JX4DMZnWPtcMkhR2DSOMcSqOVnAzqHW2MqC3fcM6wfwlC/L7sdixFDqFGEBvVCL9xZOJRG+zC5s8dlaQRcNSA=="
+      sm_oauth_token_secret_name: "github_oauth_token"
+      sm_webhooks_token_secret_name: "github_webhooks_token"
+      webhook_authentication: "GITHUB_HMAC"
+      privileged_mode: "true"
+      github_repo_owner: "travelex"
+      aws_account_id: ""
+      aws_region: ""
+      artifact_store_bucket_name: ""
+      kms_key_arn: "arn:aws:kms:eu-west-1:127277374720:key/bdf4cc26-7730-416e-aee7-3a0e09dbee27"
+      tags: {}
+    outputs:
+      - "badge_url"
+#      - "artifact_store_bucket"
 dataops_dev:
   account_name: "dataops_dev"
   module:

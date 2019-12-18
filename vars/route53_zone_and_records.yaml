@@ -1,3 +1,23 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "route53-zone"
+      namespace: "travelex"
+      stage: "platform_testing"
+      tags: {}
+      project: "poc"
+      cost_centre: "future-airlines"
+    inputs:
+      zone_name: "platform-testing.digital.travelex.net"
+      records: []
+      tags: {}
+    outputs:
+      - "zone_id"
+      - "zone_name"
 dataops_dev:
   account_name: "dataops_dev"
   module:
@@ -52,7 +72,7 @@ dataops_prod:
       project: "dataops"
       cost_centre: ""
     inputs:
-      zone_name: "sprodtaging.dataops.ri-tech.io"
+      zone_name: "prod.dataops.ri-tech.io"
       records: []
       tags: {}
     outputs:

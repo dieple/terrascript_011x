@@ -1,3 +1,30 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      project: "poc"
+      cost_centre: "platform-engineering"
+      namespace: "travelex"
+      name: "iam-role-eks-worker"
+      delimiter: "-"
+      stage: "platform_testing"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: ""
+      eks_cluster_name: "travelex-platform-testing-eks-poc"
+      iam_path: "/"
+      permissions_boundary: ""
+      tags: {}
+    outputs:
+      - "arn"
+      - "id"
+      - "name"
+      - "policy"
+      - "profile_arn"
+      - "profile_id"
+      - "profile_name"
 dataops_staging:
   account_name: "dataops_staging"
   module:

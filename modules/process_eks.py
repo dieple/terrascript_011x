@@ -29,12 +29,14 @@ def process_eks(ts, input_kwargs, label, aws_account_data, src_data, backend_dat
   remote_data_kwargs = {}
   remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "iam_role_eks_worker", module_built_by_terrascript)
   remote_data_kwargs["source"] = src_data[environment]['source']['data_iam_role_eks_worker']
+  remote_data_kwargs["region"] = region
   data_iam_role_eks_worker= module(name_="data_iam_role_eks_worker", **remote_data_kwargs)
   ts.add(data_iam_role_eks_worker)
 
   remote_data_kwargs = {}
   remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "iam_role_eks_cluster", module_built_by_terrascript)
   remote_data_kwargs["source"] = src_data[environment]['source']['data_iam_role_eks_cluster']
+  remote_data_kwargs["region"] = region
   data_iam_role_eks_cluster= module(name_="data_iam_role_eks_cluster", **remote_data_kwargs)
   ts.add(data_iam_role_eks_cluster)
 
@@ -50,6 +52,7 @@ def process_eks(ts, input_kwargs, label, aws_account_data, src_data, backend_dat
   remote_data_kwargs = {}
   remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "efs", module_built_by_terrascript)
   remote_data_kwargs["source"] = src_data[environment]['source']['data_efs']
+  remote_data_kwargs["region"] = region
   data_efs = module(name_="data_efs", **remote_data_kwargs)
   ts.add(data_efs)
 
@@ -78,6 +81,7 @@ def process_eks(ts, input_kwargs, label, aws_account_data, src_data, backend_dat
     remote_data_kwargs = {}
     remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "ssh_key_pair", module_built_by_terrascript)
     remote_data_kwargs["source"] = src_data[environment]['source']['data_ssh_key_pair']
+    remote_data_kwargs["region"] = region
     data_ssh_key_pair = module(name_="data_ssh_key_pair", **remote_data_kwargs)
     ts.add(data_ssh_key_pair)
 

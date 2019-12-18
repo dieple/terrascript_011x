@@ -1,3 +1,23 @@
+platform_testing:
+  codepipeline_umsl: true
+  codepipeline_s3_bucket: true
+  eks: false
+  efs: false
+  iam_role_codebuild: false
+  iam_role_codepipeline: false
+  iam_role_eks_worker: false
+  iam_role_efs_provisioner: false
+  iam_role_eks_cluster: false
+  iam_role_lambda_common: false
+  iam_role_rds_monitoring: false
+  route53_cluster_zone: false
+  route53_zone_and_records: false
+  core_security_group: false
+  ecr: false
+  ssh_key_pair: false
+  kms: false
+  vpc: false
+  s3_tfstate_backend: false
 dataops_dev:
   kms: false
   ssh_key_pair: false

@@ -1,3 +1,33 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      project: "poc"
+      cost_centre: "platform-engineering"
+      namespace: "travelex"
+      name: "core-sg"
+      delimiter: "-"
+      stage: "platform_testing"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      vpc_id: ""
+      ssh_cidr_block: ["217.138.28.22/32", "10.200.216.0/21"]
+      elb_cidr_block: ["10.0.0.0/8"]
+      office_cidr_block: ["217.138.28.22/32"]
+      vpc_cidr_block: []
+      rds_port: 5432
+      name: ""
+      tags: {}
+    outputs:
+      - "ssh_access_sg"
+      - "elb_access_sg"
+      - "efs_access_sg"
+      - "eks_worker_sg"
+      - "eks_cluster_sg"
+      - "codebuild_access_sg"
+      - "rds_access_sg"
 dataops_staging:
   account_name: "dataops_staging"
   module:

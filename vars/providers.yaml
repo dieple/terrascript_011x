@@ -1,3 +1,26 @@
+platform_testing:
+  provider:
+    aws:
+      version: "~> 2.6"
+      region: "eu-west-1"
+    random:
+      version: "~> 2.1"
+    archive:
+      version: "~> 1.2"
+    external:
+      version: "~> 1.1"
+    helm:
+      version: "~> 0.9"
+    kubernetes:
+      version: "~> 1.5"
+    local:
+      version: "~> 1.2"
+    null:
+      version: "~> 2.1"
+    template:
+      version: "~> 2.1"
+    tls:
+      version: "~> 2.0"
 cloudops_management:
   provider:
     aws:

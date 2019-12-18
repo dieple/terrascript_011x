@@ -1,3 +1,28 @@
+platform_testing:
+  account_name: "platform_testing"
+  project: "poc"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "route53_zone"
+      namespace: "travelex"
+      stage: "platform_testing"
+      tags: {}
+      project: "poc"
+      cost_centre: "platform-engineering"
+    inputs:
+      include_tag_label_: "true"
+      parent_zone_id: ""
+      parent_zone_name: "digital.travelex.net"
+      zone_name: "k8s.digital.travelex.net"
+    outputs:
+      - "fqdn"
+      - "parent_zone_id"
+      - "parent_zone_name"
+      - "zone_id"
+      - "zone_name"
 dataops_dev:
   account_name: "dataops_dev"
   project: "dataops"

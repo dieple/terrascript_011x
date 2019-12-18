@@ -1,3 +1,75 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      project: "poc"
+      cost_centre: "platform-engineering"
+      namespace: "travelex"
+      name: "lambda"
+      delimiter: "-"
+      stage: "platform_testing"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: "lambda-role"
+      principals:
+        Service: ["lambda.amazonaws.com"]
+      role_description: "Common lambda iam role"
+      policy_description: "Policy for the common lambda iam role"
+      create_ec2_profile: false
+      max_session_duration: 3600
+      actions_deny: []
+      addtional_policy_arns:
+        - "arn:aws:iam::aws:policy/service-role/AWSLambdaKinesisExecutionRole"
+        - "arn:aws:iam::aws:policy/service-role/AWSLambdaDynamoDBExecutionRole"
+        - "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole"
+        - "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
+      #        - "arn:aws:iam::aws:policy/service-role/AWSXrayWriteOnlyAccess"
+      policy_documents: []
+      actions_allow:
+        -
+          #          - "logs:*"
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+        -
+          - "ec2:CreateNetworkInterface"
+          - "ec2:DescribeNetworkInterfaces"
+          - "ec2:DeleteNetworkInterface"
+          - "ec2:Describe*"
+          - "ec2:CreateSnapshot"
+          - "ec2:DeleteSnapshot"
+          - "ec2:CreateImage"
+          - "ec2:CopyImage"
+          - "ec2:DeregisterImage"
+          - "cloudwatch:*"
+          - "kms:*"
+          - "ce:GetCostAndUsage"
+          - "events:EnableRule"
+          - "s3:Get*"
+          - "s3:List*"
+          - "s3:Put*"
+          - "secretsmanager:GetSecretValue"
+          - "secretsmanager:DescribeSecret"
+        -
+          - "rds:DescribeDBClusterSnapshots"
+          - "rds:DescribeDBClusters"
+          - "rds:CopyDBClusterSnapshot"
+          - "rds:ModifyDBClusterSnapshotAttribute"
+          - "rds:ListTagsForResource"
+      resources_allow:
+        -
+          - "arn:aws:logs:AWS_REGION:ACCOUNT_ID:log-group:/aws/lambda/*"
+        -
+          - "arn:aws:s3:::product-bi-images-*"
+          - "arn:aws:s3:::product-bi-images-*/*"
+        -
+          - "*"
+    outputs:
+      - "name"
+      - "arn"
+      - "id"
+      - "policy"
 dataops_dev:
   account_name: "dataops_dev"
   module:
@@ -31,6 +103,7 @@ dataops_dev:
         -
 #          - "logs:*"
           - "logs:CreateLogStream"
+          - "logs:CreateLogGroup"
           - "logs:PutLogEvents"
         -
           - "ec2:CreateNetworkInterface"
@@ -60,6 +133,7 @@ dataops_dev:
       resources_allow:
         -
           - "arn:aws:logs:AWS_REGION:ACCOUNT_ID:log-group:/aws/lambda/*"
+          - "arn:aws:logs:*:*:*"
         -
           - "arn:aws:s3:::product-bi-images-*"
           - "arn:aws:s3:::product-bi-images-*/*"

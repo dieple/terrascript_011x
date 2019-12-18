@@ -1,3 +1,28 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      project: "poc"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      namespace: "travelex"
+      name: "key_pair"
+      stage: "platform_testing"
+      tags: {}
+    inputs:
+      key_name: ""
+      generate_ssh_key: "true"
+      chmod_command: "chmod 600 %v"
+      private_key_extension: ".pem"
+      public_key_extension: ".pub"
+      ssh_key_algorithm: "RSA"
+      ssh_public_key_path: "../../../generated-ssh-key-pairs"
+    outputs:
+      - "key_name"
+      - "private_key_filename"
+      - "public_key"
+      - "public_key_filename"
 dataops_staging:
   account_name: "dataops_staging"
   module:
@@ -17,7 +42,7 @@ dataops_staging:
       private_key_extension: ".pem"
       public_key_extension: ".pub"
       ssh_key_algorithm: "RSA"
-      ssh_public_key_path: "~/.ssh"
+      ssh_public_key_path: "../../../generated-ssh-key-pairs"
     outputs:
       - "key_name"
       - "private_key_filename"
@@ -42,7 +67,7 @@ dataops_dev:
       private_key_extension: ".pem"
       public_key_extension: ".pub"
       ssh_key_algorithm: "RSA"
-      ssh_public_key_path: "./ssh_key_pair"
+      ssh_public_key_path: "../../../generated-ssh-key-pairs"
     outputs:
       - "key_name"
       - "private_key_filename"
@@ -67,7 +92,7 @@ dataops_prod:
       private_key_extension: ".pem"
       public_key_extension: ".pub"
       ssh_key_algorithm: "RSA"
-      ssh_public_key_path: "~/.ssh"
+      ssh_public_key_path: "../../../generated-ssh-key-pairs"
     outputs:
       - "key_name"
       - "private_key_filename"
@@ -93,7 +118,7 @@ cloudops_dev:
       private_key_extension: ".pem"
       public_key_extension: ".pub"
       ssh_key_algorithm: "RSA"
-      ssh_public_key_path: "./ssh_key_pair"
+      ssh_public_key_path: "../../../generated-ssh-key-pairs"
     outputs:
       - "key_name"
       - "private_key_filename"

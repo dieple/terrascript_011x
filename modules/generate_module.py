@@ -50,14 +50,14 @@ def generate_module(inargs, module_name, module_built_by_terrascript):
 
 
     # empty cicd cache bucket first for successful tfrun deletion
-    if module_name == 'codepipeline_umsl':
-        if args['tfdestroy']:
-            # empty cicd cache bucket first for successful tfrun
-            bucket, key = get_remote_state_bucket_and_key(backend_data, module_name, module_built_by_terrascript)
-            bucket_data = parse_s3_remote_data(bucket, key, '/tmp/cicd_pipeline_bucket_data_terraform.tfstate')
-            artifact_bucket_name = bucket_data['modules'][1]['resources']['aws_s3_bucket.default']['primary']['id']
-            # print("artifact_bucket_name = {0}".format(artifact_bucket_name))
-            empty_s3_bucket(artifact_bucket_name)
+    # if module_name == 'codepipeline_umsl':
+    #     if args['tfdestroy']:
+    #         # empty cicd cache bucket first for successful tfrun
+    #         bucket, key = get_remote_state_bucket_and_key(backend_data, module_name, module_built_by_terrascript)
+    #         bucket_data = parse_s3_remote_data(bucket, key, '/tmp/cicd_pipeline_bucket_data_terraform.tfstate')
+    #         artifact_bucket_name = bucket_data['modules'][1]['resources']['aws_s3_bucket.default']['primary']['id']
+    #         # print("artifact_bucket_name = {0}".format(artifact_bucket_name))
+    #         empty_s3_bucket(artifact_bucket_name)
 
     # run terraform init, terraform plan & terrform apply on the generated codes
     tfrun (ts, args)

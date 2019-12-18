@@ -69,6 +69,7 @@ def setup_input_kwargs(module_name, args, ts, label, label_kwargs, backend_data,
     elif module_name == "vpc_peering_to_transit":
         remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "vpc", vpc_built_by_terrascript)
         remote_data_kwargs["source"] = src_data[environment]['source']['data_vpc']
+        remote_data_kwargs["region"] = region
         data_vpc = module(name_="data_vpc", **remote_data_kwargs)
         ts.add(data_vpc)
         input_kwargs["requestor_vpc_id"] = data_vpc.vpc_id
@@ -78,6 +79,7 @@ def setup_input_kwargs(module_name, args, ts, label, label_kwargs, backend_data,
     elif module_name == "core_security_group":
         remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "vpc", vpc_built_by_terrascript)
         remote_data_kwargs["source"] = src_data[environment]['source']['data_vpc']
+        remote_data_kwargs["region"] = region
         data_vpc = module(name_="data_vpc", **remote_data_kwargs)
         ts.add(data_vpc)
         input_kwargs["vpc_id"] = data_vpc.vpc_id
@@ -90,25 +92,28 @@ def setup_input_kwargs(module_name, args, ts, label, label_kwargs, backend_data,
         # vpc remote data
         remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "vpc", vpc_built_by_terrascript)
         remote_data_kwargs["source"] = src_data[environment]['source']['data_vpc']
+        remote_data_kwargs["region"] =  region
         data_vpc = module(name_="data_vpc", **remote_data_kwargs)
         ts.add(data_vpc)
 
         # iam role remote data:
-        remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "eks_iam_roles", module_built_by_terrascript)
-        remote_data_kwargs["source"] = src_data[environment]['source']['data_iam_roles']
-        data_iam_roles = module(name_="data_iam_roles", **remote_data_kwargs)
-        ts.add(data_iam_roles)
+        remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "iam_role_rds_monitoring", module_built_by_terrascript)
+        remote_data_kwargs["source"] = src_data[environment]['source']['data_iam_role_rds_monitoring']
+        remote_data_kwargs["region"] = region
+        data_iam_role_rds_monitoring = module(name_="data_iam_role_rds_monitoring", **remote_data_kwargs)
+        ts.add(data_iam_role_rds_monitoring)
 
         # core security group remote data:
         remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "core_security_group", module_built_by_terrascript)
         remote_data_kwargs["source"] = src_data[environment]['source']['data_core_security_group']
+        remote_data_kwargs["region"] = region
         data_core_security_group = module(name_="data_core_security_group", **remote_data_kwargs)
         ts.add(data_core_security_group)
 
         input_kwargs["vpc_id"] = data_vpc.vpc_id
         input_kwargs["subnets"] = data_vpc.private_subnets
-        input_kwargs["vpc_security_group_ids"] = data_core_security_group.rds_access_sg
-        input_kwargs["monitoring_role_arn"] = data_iam_roles.rds_monitoring_arn
+        input_kwargs["vpc_security_group_ids"] = [data_core_security_group.rds_access_sg]
+        input_kwargs["monitoring_role_arn"] = data_iam_role_rds_monitoring.arn
 
     elif module_name == 'ec2_instance':
         device_name = get_value(input_kwargs["ebs_block_device"], "device_name")
@@ -120,7 +125,7 @@ def setup_input_kwargs(module_name, args, ts, label, label_kwargs, backend_data,
     elif module_name == 'eks':
         input_kwargs = process_eks(ts, input_kwargs, label, aws_account_data, src_data, backend_data, module_built_by_terrascript)
 
-    elif module_name == 'codepipeline':
+    elif module_name in ['codepipeline', 'codepipeline_umsl']:
         input_kwargs = process_codepipeline(ts, input_kwargs, label, aws_account_data, src_data, backend_data, module_built_by_terrascript)
 
     elif module_name == 'iam_system_user':
@@ -138,6 +143,7 @@ def setup_input_kwargs(module_name, args, ts, label, label_kwargs, backend_data,
             # eks worker iam role remote data:
             remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "iam_role_eks_worker", module_built_by_terrascript)
             remote_data_kwargs["source"] = src_data[environment]['source']['data_iam_role_eks_worker']
+            remote_data_kwargs["region"] = region
             data_iam_role_eks_worker = module(name_="data_iam_role_eks_worker", **remote_data_kwargs)
             ts.add(data_iam_role_eks_worker)
             input_kwargs["eks_worker_role_name"] = data_iam_role_eks_worker.name
@@ -152,15 +158,26 @@ def setup_input_kwargs(module_name, args, ts, label, label_kwargs, backend_data,
             if is_empty(input_kwargs["role_arn"]):
                 remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "iam_role_lambda_common", module_built_by_terrascript)
                 remote_data_kwargs["source"] = src_data[environment]['source']['data_iam_role_lambda_common']
+                remote_data_kwargs["region"] = region
                 data_iam_role_lambda_common = module(name_="data_iam_role_lambda_common", **remote_data_kwargs)
                 ts.add(data_iam_role_lambda_common)
                 input_kwargs["role_arn"] = data_iam_role_lambda_common.role_arn
 
-    elif module_name == 'codepipeline_umsl':
-        remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "vpc", environment)
+    elif module_name == 'route53_private_zone':
+        # vpc remote data
+        remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "vpc", vpc_built_by_terrascript)
         remote_data_kwargs["source"] = src_data[environment]['source']['data_vpc']
         data_vpc = module(name_="data_vpc", **remote_data_kwargs)
         ts.add(data_vpc)
+
+        input_kwargs["main_vpc"] = data_vpc.vpc_id if is_empty(input_kwargs["main_vpc"]) else input_kwargs["main_vpc"]
+        if is_empty(input_kwargs["zone_name"]):
+            input_kwargs["zone_name"] = label.id
+
+    elif module_name == 'sns_topic':
+        input_kwargs["sns_topic_name"] = label.id if is_empty(input_kwargs["sns_topic_name"]) else input_kwargs["sns_topic_name"]
+        input_kwargs["display_name"] = label.id if is_empty(input_kwargs["display_name"]) else input_kwargs["display_name"]
+
 
     input_kwargs["source"] = src_data[environment]['source'][module_name]
     # print("input_kwargs: --- {0} ---\n".format(input_kwargs))

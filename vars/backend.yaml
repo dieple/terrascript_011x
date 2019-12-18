@@ -1,3 +1,14 @@
+platform_testing:
+  vpc_built_by_terrascript: true
+  terraform:
+    required_version: ">= 0.11.7"
+    backend:
+      type: "s3"
+      encrypt: 1
+      bucket: "travelex-platform-testing-tf-state-poc"
+      dynamodb_table: "travelex-platform-testing-tf-state-poc-lock"
+    remote_data:
+      bucket: "travelex-platform-testing-tf-state-poc"
 dataops_dev:
   vpc_built_by_terrascript: true
   terraform:

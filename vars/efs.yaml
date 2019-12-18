@@ -1,3 +1,40 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      attributes: ["poc"]
+      delimiter: "-"
+      enabled: "true"
+      name: "efs"
+      namespace: "travelex"
+      stage: "platform_testing"
+      tags: {}
+      project: "dataops"
+      cost_centre: "platform-engineering"
+    inputs:
+      availability_zones: []
+      name: ""
+      environment: "platform_testing"
+      dns_name: ""
+      encrypted: "false"
+      mount_target_ip_address:
+      performance_mode: "generalPurpose"
+      provisioned_throughput_in_mibps: 10
+      security_groups: []
+      subnets: []
+      tags: {}
+      throughput_mode: "provisioned"
+      vpc_id: ""
+      zone_id: ""
+    outputs:
+      - "arn"
+      - "dns_name"
+      - "host"
+      - "id"
+      - "mount_target_dns_names"
+      - "mount_target_ids"
+      - "mount_target_ips"
+      - "network_interface_ids"
 dataops_staging:
   account_name: "dataops_staging"
   module:

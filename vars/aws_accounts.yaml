@@ -1,5 +1,6 @@
 account_ids:
   "cloudops_dev": "092XXXXXX243"
   "cloudops_staging": "55XXXXXX9837"
-  "dataops_dev": "190033888840"
+  "dataops_dev": "XXX033888XXX"
   "dataops_staging": "561XXXXXX310"
+  "platform_testing": "127277374720"

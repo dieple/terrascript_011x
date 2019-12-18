@@ -1,0 +1,70 @@
+dataops_staging:
+  account_name: "dataops_staging"
+  project: "dataops"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "r53zone"
+      namespace: "og8"
+      stage: "staging"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      zone_name: "k8s-internal.staging.dataops.ri-tech.io"
+      parent_zone_name: "staging.dataops.ri-tech.io"
+      main_vpc: ""
+      secondary_vpcs: []
+      tags: {}
+      force_destroy: false
+    outputs:
+      - "zone_id"
+dataops_dev:
+  account_name: "dataops_dev"
+  project: "dataops"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "r53zone"
+      namespace: "og8"
+      stage: "dev"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      zone_name: "k8s-internal.dev.dataops.ri-tech.io"
+      parent_zone_name: "dev.dataops.ri-tech.io"
+      main_vpc: ""
+      secondary_vpcs: []
+      tags: {}
+      force_destroy: false
+    outputs:
+      - "zone_id"
+dataops_prod:
+  account_name: "dataops_prod"
+  project: "dataops"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "r53zone"
+      namespace: "og8"
+      stage: "prod"
+      tags: {}
+      project: "dataops"
+      cost_centre: ""
+    inputs:
+      zone_name: "k8s-internal.prod.dataops.ri-tech.io"
+      parent_zone_name: "prod.dataops.ri-tech.io"
+      main_vpc: ""
+      secondary_vpcs: []
+      tags: {}
+      force_destroy: false
+    outputs:
+      - "zone_id"
+

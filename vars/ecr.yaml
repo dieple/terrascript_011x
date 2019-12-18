@@ -1,3 +1,25 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      project: "poc"
+      cost_centre: "platform-engineering"
+      namespace: "travelex"
+      stage: "platform_testing"
+      name: "ecr"
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+    inputs:
+      allowed_account_ids: ["744482186728", "107226666137", "072979390894"]
+      repository_names: ["umsl"]
+      allow_push: "true"
+      repo_lifecycle_info: {}
+      tags: {}
+    outputs:
+      - "registry_ids"
+      - "repository_urls"
+      - "repository_names"
 platform_staging:
   account_name: "platform_staging"
   module:

@@ -1,3 +1,56 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      project: "poc"
+      cost_centre: "platform-engineering"
+      namespace: "travelex"
+      name: "iam-role-codepipeline"
+      delimiter: "-"
+      stage: "platform_testing"
+      attributes: []
+      enabled: "true"
+      tags: {}
+    inputs:
+      role_name: "iam-role-codepipeline"
+      actions_allow:
+        -
+          - "codebuild:StartBuild"
+          - "codebuild:BatchGetBuilds"
+          - "codedeploy:CreateDeployment"
+          - "codedeploy:GetApplicationRevision"
+          - "codedeploy:GetDeployment"
+          - "codedeploy:GetDeploymentConfig"
+          - "codedeploy:RegisterApplicationRevision"
+          - "iam:PassRole"
+          - "iam:GetRole"
+          - "codecommit:GitPull"
+        -
+          - "s3:CreateBucket"
+          - "s3:GetObject"
+          - "s3:List*"
+          - "s3:PutObject"
+          - "s3:GetBucketAcl"
+          - "s3:GetBucketLocation"
+          - "s3:GetObjectVersion"
+      resources_allow:
+        -
+          - "*"
+        -
+          - "arn:aws:s3:::travelex-platform-testing-codepipeline-s3-bucket-poc"
+      actions_deny: []
+      principals:
+        Service: ["codepipeline.amazonaws.com"]
+      role_description: "codepipeline iam role"
+      policy_description: "Policy for the code pipeline iam role"
+      policy_documents: []
+      create_ec2_profile: false
+      max_session_duration: 3600
+    outputs:
+      - "name"
+      - "arn"
+      - "id"
+      - "policy"
 dataops_staging:
   account_name: "dataops_staging"
   module:

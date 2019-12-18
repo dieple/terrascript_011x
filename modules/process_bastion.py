@@ -10,6 +10,7 @@ from utils import *
 def process_bastion(ts, input_kwargs, label, aws_account_data, src_data, backend_data, module_built_by_terrascript):
 
   environment = settings.environment
+  region = settings.region
   vpc_built_by_terrascript = backend_data[environment]['vpc_built_by_terrascript']
 
   # vpc remote data
@@ -24,6 +25,7 @@ def process_bastion(ts, input_kwargs, label, aws_account_data, src_data, backend
     remote_data_kwargs = {}
     remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "route53_zone_and_records", module_built_by_terrascript)
     remote_data_kwargs["source"] = src_data[environment]['source']['data_route53_zone_and_records']
+    remote_data_kwargs["region"] = region
     data_route53_zone_and_records = module(name_="data_route53_zone_and_records", **remote_data_kwargs)
     ts.add(data_route53_zone_and_records)
 
@@ -31,6 +33,7 @@ def process_bastion(ts, input_kwargs, label, aws_account_data, src_data, backend
     remote_data_kwargs = {}
     remote_data_kwargs["bucket"], remote_data_kwargs["key"] = get_remote_state_bucket_and_key(backend_data, "ssh_key_pair", module_built_by_terrascript)
     remote_data_kwargs["source"] = src_data[environment]['source']['data_ssh_key_pair']
+    remote_data_kwargs["region"] = region
     data_ssh_key_pair = module(name_="data_ssh_key_pair", **remote_data_kwargs)
     ts.add(data_ssh_key_pair)
 

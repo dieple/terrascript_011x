@@ -17,6 +17,7 @@ dataops_staging:
       preferred_maintenance_window: "mon:19:00-mon:20:00"
       backup_retention_period: 7
       database_name: ""
+      name: ""
       kms_key_id: "arn:aws:kms:eu-west-1:561276803310:key/aa95c97b-074d-4c38-82bc-48c2abcbef7a"
       master_username: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQHwT9cBe2/iwMgnyzVKbMROAAAAZjBkBgkqhkiG9w0BBwagVzBVAgEAMFAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMWh0x/6AznZqij8nXAgEQgCOS2ysawZMKP6mJQ5BvMW+wGeBNa7Akc9CtX0xozeRoiTfXGA=="
       master_password: "AQICAHi3VpmsBgzqG5wdLWUZzAaLcGL7req+vjSoQyXzc6xJvQGeNciPN4wOGC5huhsr6wQDAAAAbjBsBgkqhkiG9w0BBwagXzBdAgEAMFgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM30gJ5ijW2CuHk3eXAgEQgCuG8n8PJ3nPQbXGj8xJVEvkHiX5FyELsI5ayOiLCPDPsb+JcJgPqtlGkau2"
@@ -65,6 +66,7 @@ dataops_dev:
       preferred_maintenance_window: "mon:19:00-mon:20:00"
       backup_retention_period: 7
       database_name: ""
+      name: ""
       kms_key_id: "arn:aws:kms:eu-west-1:190033888840:key/bed0b309-6fb6-486b-9870-2c3188ff5b61"
       master_username: "AQICAHiAkHLuG6Wm9yG6cYEm7GA2/gHfK03S20Lc4n5br7MfBwEP/3ADg1dixsS8gRLnGjWVAAAAZjBkBgkqhkiG9w0BBwagVzBVAgEAMFAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMJ7f5T9Y7UV1lvGomAgEQgCO1r/pgtvUs9RUOX5tokWUHDlqprIqzg4LNMeZd++ZgDEIbtQ=="
       master_password: "AQICAHiAkHLuG6Wm9yG6cYEm7GA2/gHfK03S20Lc4n5br7MfBwFjKE6f5YSCbmN5bQnlfoM5AAAAbDBqBgkqhkiG9w0BBwagXTBbAgEAMFYGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMftvGrUXfrP//dsRhAgEQgCnTHoKs+dhA/gwJzNDu4oA5KXTpg+cLSA3M8jcX863caJQLMVBJmSWSQA=="
@@ -113,6 +115,7 @@ cloudops_staging:
       preferred_maintenance_window: "mon:19:00-mon:20:00"
       backup_retention_period: 7
       database_name: ""
+      name: ""
       kms_key_id: "arn:aws:kms:eu-west-1:558469419837:key/41d1ddbb-8895-475a-affc-36efaf2f34ed"
       master_username: ""
       master_password: ""
@@ -161,6 +164,7 @@ cloudops_prod:
       preferred_maintenance_window: "mon:19:00-mon:20:00"
       backup_retention_period: 7
       database_name: ""
+      name: ""
       kms_key_id: "arn:aws:kms:eu-west-1:795357751823:key/b4fffdca-f64f-4409-9a3f-f8893a3c1dc1"
       master_username: "AQICAHh+9r5F0paHrJD4nbzm3wktP5+DIIH8BwcbDVImwawWnQGKKB5Ux8X7UCTrXG2qS5NwAAAAZjBkBgkqhkiG9w0BBwagVzBVAgEAMFAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMy/8QoLdm6ABmhRQIAgEQgCNHDbo1AoVmLpa18mHTADbBnqgNY7pHCc/KckqhtBmkrJBlig=="
       master_password: "AQICAHh+9r5F0paHrJD4nbzm3wktP5+DIIH8BwcbDVImwawWnQHt4yU2ieuXYAVQ/x/MTQwZAAAAbjBsBgkqhkiG9w0BBwagXzBdAgEAMFgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMKFuWM/uP2YR+FEpTAgEQgCsd97P0+A1R4nR4xK/6p2f/O7iwef1qebQD8dIPn5wsstKlupe8eVBDvg2z"
@@ -209,6 +213,7 @@ cloudops_dev:
       preferred_maintenance_window: "mon:19:00-mon:20:00"
       backup_retention_period: 7
       database_name: ""
+      name: ""
       kms_key_id: "arn:aws:kms:eu-west-1:092941714243:key/a38c88ee-2d10-4a6e-ba3b-f440590caa0e"
       master_username: ""
       master_password: ""
