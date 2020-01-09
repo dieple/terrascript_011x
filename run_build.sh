@@ -5,6 +5,7 @@
 #                   --profile dataops-dev \
 #                   --tfapply true \
 #                   --eksTags true \
+#                   --awsvault true \
 #                   -region "eu-west-1"
 
 # to destroy modules uncomment below
@@ -19,5 +20,4 @@ python3 ./build.py \
   -p platform-testing \
   -t true \
   -k true \
-  -w true \
   -r "eu-west-1"

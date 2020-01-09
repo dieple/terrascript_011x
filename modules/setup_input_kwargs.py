@@ -86,7 +86,7 @@ def setup_input_kwargs(module_name, args, ts, label, label_kwargs, backend_data,
         input_kwargs["vpc_cidr_block"] = [data_vpc.vpc_cidr]
 
     elif module_name == "bastion":
-        input_kwargs = process_bastion(ts, input_kwargs, label, aws_account_data, src_data, backend_data, environment, module_built_by_terrascript)
+        input_kwargs = process_bastion(ts, input_kwargs, label, aws_account_data, src_data, backend_data, module_built_by_terrascript)
 
     elif module_name == "rds_cluster_aurora":
         # vpc remote data

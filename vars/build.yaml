@@ -3,6 +3,7 @@ platform_testing:
   vpc: false
   kms: false
   ssh_key_pair: false
+  bastion: true
   iam_role_codebuild: false
   iam_role_codepipeline: false
   iam_role_eks_worker: false
@@ -16,8 +17,8 @@ platform_testing:
   ecr: false
   efs: false
   eks: false
-  codepipeline_s3_bucket: true
-  codepipeline_umsl: true
+  codepipeline_s3_bucket: false
+  codepipeline_umsl: false
 dataops_dev:
   s3_tfstate_backend: false
   codepipeline_s3_bucket: false

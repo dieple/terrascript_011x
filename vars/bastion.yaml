@@ -1,3 +1,41 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "bastion"
+      namespace: "travelex"
+      stage: "platform_testing"
+      tags: {}
+      project: "poc"
+      cost_centre: "platform-engineering"
+    inputs:
+      bastion_name: ""
+      allowed_cidr_blocks: ["217.138.28.22/32", "10.200.216.0/21"]
+      instance_type: "t3.micro"
+      ssh_user: "ec2-user"
+      user_data: []
+      volume_size: "50"
+      public_key_data: ""
+      max_size: "1"
+      min_size: "1"
+      desired_capacity: "1"
+      wait_for_capacity_timeout: "10m"
+      cooldown: "300"
+      health_check_grace_period: "300"
+      scale_down_cron: "0 23 * * *"
+      scale_up_cron: "0 8 * * MON-FRI"
+      scale_down_min_size: "1"
+      scale_down_desired_capacity: "1"
+      tags: {}
+    outputs:
+      - "private_ip"
+      - "public_ip"
+      - "role"
+      - "security_group_id"
+      - "ssh_user"
 dataops_staging:
   account_name: "dataops_staging"
   module:
