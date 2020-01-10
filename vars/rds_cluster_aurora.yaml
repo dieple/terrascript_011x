@@ -1,3 +1,52 @@
+platform_testing:
+  account_name: "platform_testing"
+  module:
+    tag_label:
+      attributes: []
+      delimiter: "-"
+      enabled: "true"
+      name: "rds"
+      namespace: "travelex"
+      stage: "platform_testing"
+      tags: {}
+      project: "poc"
+      cost_centre: "platform-engineer"
+    inputs:
+      port: 5432
+      preferred_backup_window: "18:00-19:00"
+      preferred_maintenance_window: "mon:19:00-mon:20:00"
+      backup_retention_period: 7
+      database_name: "vaultpoc"
+      name: "vaultpoc"
+      kms_key_id: "arn:aws:kms:eu-west-1:127277374720:key/bdf4cc26-7730-416e-aee7-3a0e09dbee27"
+      master_username: "AQICAHjKA4iHZKv73Pv+s7FvUjk5rD9CLNsvEAUcmvVfHdnXTAHeVQ4wvFyLN+B/naI2YXNzAAAAZTBjBgkqhkiG9w0BBwagVjBUAgEAME8GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMazGnsazpv/8D+BpxAgEQgCIzVByx4Q/znSrMKeuQGaMiCrodltlrZOJCtg8R2gM/1X4g"
+      master_password: "AQICAHjKA4iHZKv73Pv+s7FvUjk5rD9CLNsvEAUcmvVfHdnXTAEgSoYN56wsDItvmEc+NT60AAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM/iB5HzsPLhDt+BPgAgEQgDvju4svoKe+vzDONjbdtkuucixSltqPU9qRBgfEhRLcJcdY2uwC2/mKm6uZN9Rhb9NGcH/dxLNGq4rTxA=="
+      engine: "aurora-postgresql"
+      engine_version: "10.7"
+      subnets: []
+      vpc_id: ""
+      replica_count: 2
+      replica_scale_enabled: "true"
+      replica_scale_min: "2"
+      replica_scale_max: "5"
+      monitoring_interval: "60"
+      monitoring_role_arn: ""
+      instance_type: "db.r4.large"
+      apply_immediately: "true"
+      skip_final_snapshot: "true"
+      family: "aurora-postgresql10"
+      tags: {}
+      auto_minor_version_upgrade: "true"
+      vpc_security_group_ids: []
+    outputs:
+      - "this_rds_cluster_database_name"
+      - "this_rds_cluster_endpoint"
+      - "this_rds_cluster_id"
+      - "this_rds_cluster_instance_endpoints"
+      - "this_rds_cluster_master_username"
+      - "this_rds_cluster_port"
+      - "this_rds_cluster_reader_endpoint"
+      - "this_rds_cluster_resource_id"
 dataops_staging:
   account_name: "dataops_staging"
   module:

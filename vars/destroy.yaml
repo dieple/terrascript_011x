@@ -1,8 +1,8 @@
 platform_testing:
   codepipeline_s3_bucket: false
   codepipeline_umsl: false
-  bastion: true
-  eks: false
+  bastion: false
+  eks: true
   efs: false
   iam_role_codebuild: false
   iam_role_codepipeline: false

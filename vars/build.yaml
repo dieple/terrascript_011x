@@ -3,7 +3,7 @@ platform_testing:
   vpc: false
   kms: false
   ssh_key_pair: false
-  bastion: true
+  bastion: false
   iam_role_codebuild: false
   iam_role_codepipeline: false
   iam_role_eks_worker: false
@@ -16,6 +16,7 @@ platform_testing:
   core_security_group: false
   ecr: false
   efs: false
+  rds_cluster_aurora: true
   eks: false
   codepipeline_s3_bucket: false
   codepipeline_umsl: false
