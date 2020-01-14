@@ -66,7 +66,7 @@ platform_testing:
       worker_sg_ingress_from_port: "1025"
       workers_additional_policies: []
       workers_additional_policies_count: "0"
-      workers_group_defaults: { "asg_desired_capacity": "1", "asg_min_size": "1", "asg_max_size": "4", "protect_from_scale_in": true , "ami_id": "ami-0b9d2c11b47bd8264"}
+      workers_group_defaults: { "asg_desired_capacity": "3", "asg_min_size": "3", "asg_max_size": "5", "protect_from_scale_in": true , "ami_id": "ami-0b9d2c11b47bd8264", "instance_type": "t2.large"}
       write_aws_auth_config: "true"
       write_kubeconfig: "true"
       vpc_tag_filter: "travelex-platform-testing-vpc-poc"

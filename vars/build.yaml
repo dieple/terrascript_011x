@@ -16,8 +16,8 @@ platform_testing:
   core_security_group: false
   ecr: false
   efs: false
-  rds_cluster_aurora: true
-  eks: false
+  rds_cluster_aurora: false
+  eks: true
   codepipeline_s3_bucket: false
   codepipeline_umsl: false
 dataops_dev:
